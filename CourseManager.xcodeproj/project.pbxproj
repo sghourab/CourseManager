@@ -18,7 +18,6 @@
 		0047796428E61183001AE090 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0047796328E61183001AE090 /* FirebaseFirestore */; };
 		0047796628E61183001AE090 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0047796528E61183001AE090 /* FirebaseFirestoreCombine-Community */; };
 		0047796828E61183001AE090 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0047796728E61183001AE090 /* FirebaseFirestoreSwift */; };
-		0047796B28E61891001AE090 /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796A28E61891001AE090 /* CourseRepository.swift */; };
 		0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796D28E75C3B001AE090 /* CoursesViewModel.swift */; };
 		0047797028E75CA5001AE090 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796F28E75CA5001AE090 /* CourseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		0047795728E5E095001AE090 /* CourseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInformation.swift; sourceTree = "<group>"; };
 		0047795A28E5E364001AE090 /* AddCourseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseSheet.swift; sourceTree = "<group>"; };
 		0047795E28E60F96001AE090 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0047796A28E61891001AE090 /* CourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
 		0047796D28E75C3B001AE090 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		0047796F28E75CA5001AE090 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				0047794928E5DF1E001AE090 /* CourseManagerApp.swift */,
-				0047796928E6185F001AE090 /* Repositories */,
 				0047794828E5DF1E001AE090 /* CourseManager */,
 				0047794728E5DF1E001AE090 /* Products */,
 			);
@@ -97,14 +94,6 @@
 				0047795728E5E095001AE090 /* CourseInformation.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0047796928E6185F001AE090 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				0047796A28E61891001AE090 /* CourseRepository.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		0047796C28E75C14001AE090 /* ViewModels */ = {
@@ -210,7 +199,6 @@
 				0047794C28E5DF1E001AE090 /* HomeView.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddCourseSheet.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
-				0047796B28E61891001AE090 /* CourseRepository.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
