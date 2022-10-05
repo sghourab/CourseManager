@@ -22,7 +22,7 @@ struct CourseManagerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            CoursesView()
         }
     }
 }

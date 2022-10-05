@@ -11,12 +11,11 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import SwiftUI
-// import CoreMIDI
 
 class CoursesViewModel: ObservableObject {
     @Published var courses = [CourseInformation]()
 
-    private var db = Firestore.firestore()
+    var db = Firestore.firestore()
 
     func fetchData() {
         db.collection("courses").addSnapshotListener { querySnapshot, error in
@@ -32,5 +31,24 @@ class CoursesViewModel: ObservableObject {
                 }
             }
         }
+    }
+
+    func deleteCourseFromFirestore(id: String) {
+        db.collection("courses").document(id).delete { error in
+            if let error = error {
+                print("Error removing document: \(error)")
+            } else {
+                print("Course successfully removed")
+            }
+        }
+    }
+
+    func handleOnDeleteSwipeAction(offSets: IndexSet) {
+        let index = offSets[offSets.startIndex]
+        let selectedID = courses[index].id
+
+        deleteCourseFromFirestore(id: selectedID ?? "")
+
+        courses.remove(atOffsets: offSets)
     }
 }
