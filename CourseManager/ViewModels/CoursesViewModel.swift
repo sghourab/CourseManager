@@ -15,10 +15,8 @@ import SwiftUI
 class CoursesViewModel: ObservableObject {
     @Published var courses = [CourseInformation]()
 
-    var db = Firestore.firestore()
-
     func fetchData() {
-        db.collection("courses").addSnapshotListener { querySnapshot, error in
+        CourseRepository.collection.addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -34,7 +32,7 @@ class CoursesViewModel: ObservableObject {
     }
 
     func deleteCourseFromFirestore(id: String) {
-        db.collection("courses").document(id).delete { error in
+        CourseRepository.collection.document(id).delete { error in
             if let error = error {
                 print("Error removing document: \(error)")
             } else {

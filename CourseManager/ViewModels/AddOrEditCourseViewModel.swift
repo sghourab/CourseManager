@@ -11,19 +11,21 @@ import Foundation
 
 class AddOrEditCourseViewModel: ObservableObject {
     @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
-    private var db = Firestore.firestore()
     private var cancellables = Set<AnyCancellable>()
 
     func addCourse(course: CourseInformation) {
         do {
-            try db.collection("courses").addDocument(from: course)
+            try CourseRepository.collection.addDocument(from: course)
         } catch {
             print(error)
         }
     }
 
     func edit() {
-        let idRef = db.collection("courses").document(course.id!)
+        guard let courseID = course.id else {
+            return
+        }
+        let idRef = CourseRepository.collection.document(courseID)
 
         idRef.updateData([
             "name": course.name,

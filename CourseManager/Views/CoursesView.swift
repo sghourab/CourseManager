@@ -5,15 +5,12 @@
 //  Created by Summer Crow on 2022-09-29.
 //
 
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 import SwiftUI
 
 struct CoursesView: View {
     @State private var showingSheet = false
     @State private var selectedCourseID = ""
-    
+
     @ObservedObject private var viewModel = CoursesViewModel()
 
     var body: some View {
@@ -22,7 +19,7 @@ struct CoursesView: View {
                 .onAppear {
                     self.viewModel.fetchData()
                 }
-        
+
                 .toolbar {
                     Button {
                         showingSheet.toggle()
@@ -36,35 +33,27 @@ struct CoursesView: View {
                 .navigationTitle("Courses")
         }
     }
-    
+
     var listOfCourses: some View {
         List {
             ForEach(viewModel.courses) { course in
-               
+
                 NavigationLink {
-                    CourseDetailsView(courseID: course.id!)
+                    if let courseID = course.id {
+                        CourseDetailsView(courseID: courseID)
+                    }
                 } label: {
                     HStack {
                         Text(course.name)
                         Spacer()
                         Group {
-                            if course.status == .complete {
-                                Image(systemName: "rectangle.inset.filled")
-                                    .symbolRenderingMode(.palette)
-                                    .foregroundStyle(Color.green, Color.black)
-                            } else if course.status == .inProgress {
-                                Image(systemName: "rectangle.lefthalf.inset.filled")
-                                    .symbolRenderingMode(.palette)
-                                    .foregroundStyle(Color.green, Color.black)
-                            } else {
-                                Image(systemName: "rectangle")
-                                    .foregroundStyle(Color.black)
-                            }
+                            course.status == .complete ? Status.complete.image : course.status == .inProgress ? Status.inProgress.image : Status.todo.image
                         }
+                        .foregroundStyle(course.status == .todo ? Color.black : Color.green, Color.black)
                     }
                 }
             }.onDelete { offsets in
-             
+
                 viewModel.handleOnDeleteSwipeAction(offSets: offsets)
             }
         }.listStyle(.automatic)

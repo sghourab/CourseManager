@@ -6,15 +6,11 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 struct CourseDetailsView: View {
     var courseID: String
     @StateObject var viewModel = CourseDetailsViewModel()
     @State var showingAddCourseSheet: Bool = false
-    var db = Firestore.firestore()
 
     var body: some View {
         Form {
@@ -133,12 +129,4 @@ struct CourseDetailsView: View {
             }
         }
     }
-    
- 
 }
-
-//struct CourseDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CourseDetailsView(course: CourseInformation(id: "abcd", name: "maths", url: "maths.com", gitHubURL: "gitHub.com/maths", status: .todo, dateOfCompletion: Date(), comments: "I've learnt some Maths"))
-//    }
-//}

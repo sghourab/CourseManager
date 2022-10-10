@@ -13,10 +13,9 @@ import SwiftUI
 
 class CourseDetailsViewModel: ObservableObject {
     @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
-    private var db = Firestore.firestore()
 
     func getCourseInformation(courseID: String) {
-        let courseRef = db.collection("courses").document(courseID)
+        let courseRef = CourseRepository.collection.document(courseID)
         courseRef.getDocument(as: CourseInformation.self) { result in
             switch result {
             case .success(let course):

@@ -5,8 +5,6 @@
 //  Created by Summer Crow on 2022-09-29.
 //
 
-import FirebaseCore
-import FirebaseFirestore
 import SwiftUI
 
 struct AddOrEditCourseSheet: View {

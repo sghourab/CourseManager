@@ -17,22 +17,24 @@ struct CourseInformation: Identifiable, Codable {
     var status: Status
     var dateOfCompletion: Date
     var comments: String
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case url
-        case gitHubURL
-        case status
-        case dateOfCompletion
-        case comments
-    }
 }
 
 enum Status: String, Codable, Equatable, CaseIterable {
     case todo = "To Do"
     case inProgress = "In Progress"
     case complete = "Complete"
-    
-    var localizedName: LocalizedStringKey {LocalizedStringKey(rawValue)}
+
+    var localizedName: LocalizedStringKey { LocalizedStringKey(rawValue) }
+}
+
+extension Status {
+    var image: Image {
+        switch self {
+        case .todo: return Image(systemName: "rectangle")
+            .symbolRenderingMode(.palette)
+        case .inProgress: return Image(systemName: "rectangle.lefthalf.inset.filled")
+            .symbolRenderingMode(.palette)
+        case .complete: return Image(systemName: "rectangle.inset.filled")
+        }
+    }
 }

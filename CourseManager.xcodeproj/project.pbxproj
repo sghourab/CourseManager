@@ -22,6 +22,7 @@
 		0047797028E75CA5001AE090 /* AddOrEditCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */; };
 		00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */; };
 		00CF92A528ED2F11002CE4A8 /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */; };
+		00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditCourseViewModel.swift; sourceTree = "<group>"; };
 		00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
+		00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		0047794828E5DF1E001AE090 /* CourseManager */ = {
 			isa = PBXGroup;
 			children = (
+				00CF92B628F3D3BE002CE4A8 /* Repository */,
 				0047795928E5E2C4001AE090 /* Model */,
 				0047797128E76129001AE090 /* Views */,
 				0047796C28E75C14001AE090 /* ViewModels */,
@@ -118,6 +121,14 @@
 				00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		00CF92B628F3D3BE002CE4A8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 				00CF92A528ED2F11002CE4A8 /* CourseDetailsViewModel.swift in Sources */,
 				0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddOrEditCourseSheet.swift in Sources */,
+				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
 				00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
