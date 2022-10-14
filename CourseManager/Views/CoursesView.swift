@@ -49,7 +49,7 @@ struct CoursesView: View {
                         Group {
                             course.status == .complete ? Status.complete.image : course.status == .inProgress ? Status.inProgress.image : Status.todo.image
                         }
-                        .foregroundStyle(course.status == .todo ? Color.black : Color.green, Color.black)
+                        .foregroundStyle(course.status == .todo ? Color.primary : Color.green, Color.primary)
                     }
                 }
             }.onDelete { offsets in

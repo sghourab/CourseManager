@@ -23,6 +23,31 @@
 		00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */; };
 		00CF92A528ED2F11002CE4A8 /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */; };
 		00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */; };
+		00CF92E728F88A7E002CE4A8 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92CF28F88A7E002CE4A8 /* MatchedView.swift */; };
+		00CF92E828F88A7E002CE4A8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D028F88A7E002CE4A8 /* SearchView.swift */; };
+		00CF92E928F88A7E002CE4A8 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D128F88A7E002CE4A8 /* CourseView.swift */; };
+		00CF92EA28F88A7E002CE4A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D228F88A7E002CE4A8 /* HomeView.swift */; };
+		00CF92EB28F88A7E002CE4A8 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D428F88A7E002CE4A8 /* ModalView.swift */; };
+		00CF92EC28F88A7E002CE4A8 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D528F88A7E002CE4A8 /* SignInView.swift */; };
+		00CF92ED28F88A7E002CE4A8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D628F88A7E002CE4A8 /* SignUpView.swift */; };
+		00CF92EE28F88A7E002CE4A8 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D728F88A7E002CE4A8 /* AccountView.swift */; };
+		00CF92EF28F88A7E002CE4A8 /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92D928F88A7E002CE4A8 /* CourseItem.swift */; };
+		00CF92F028F88A7E002CE4A8 /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92DA28F88A7E002CE4A8 /* BlobView.swift */; };
+		00CF92F128F88A7E002CE4A8 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92DB28F88A7E002CE4A8 /* HexagonView.swift */; };
+		00CF92F228F88A7E002CE4A8 /* FeaturedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92DC28F88A7E002CE4A8 /* FeaturedItem.swift */; };
+		00CF92F328F88A7E002CE4A8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92DE28F88A7E002CE4A8 /* Model.swift */; };
+		00CF92F428F88A7E002CE4A8 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92DF28F88A7E002CE4A8 /* Suggestion.swift */; };
+		00CF92F528F88A7E002CE4A8 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E028F88A7E002CE4A8 /* PreferenceKeys.swift */; };
+		00CF92F628F88A7E002CE4A8 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E128F88A7E002CE4A8 /* Course.swift */; };
+		00CF92F728F88A7E002CE4A8 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E228F88A7E002CE4A8 /* Tab.swift */; };
+		00CF92F828F88A7E002CE4A8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E428F88A7E002CE4A8 /* TabBar.swift */; };
+		00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E528F88A7E002CE4A8 /* NavigationBar.swift */; };
+		00CF92FA28F88A7E002CE4A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92E628F88A7E002CE4A8 /* ContentView.swift */; };
+		00CF930C28F88BD7002CE4A8 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930728F88BD7002CE4A8 /* Styles.swift */; };
+		00CF930D28F88BD7002CE4A8 /* InputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930828F88BD7002CE4A8 /* InputStyle.swift */; };
+		00CF930E28F88BD7002CE4A8 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930928F88BD7002CE4A8 /* Animations.swift */; };
+		00CF930F28F88BD7002CE4A8 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930A28F88BD7002CE4A8 /* AnimatableFontModifier.swift */; };
+		00CF931028F88BD7002CE4A8 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930B28F88BD7002CE4A8 /* AngularButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +64,31 @@
 		00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
 		00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
+		00CF92CF28F88A7E002CE4A8 /* MatchedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
+		00CF92D028F88A7E002CE4A8 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		00CF92D128F88A7E002CE4A8 /* CourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		00CF92D228F88A7E002CE4A8 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		00CF92D428F88A7E002CE4A8 /* ModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		00CF92D528F88A7E002CE4A8 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		00CF92D628F88A7E002CE4A8 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		00CF92D728F88A7E002CE4A8 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		00CF92D928F88A7E002CE4A8 /* CourseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
+		00CF92DA28F88A7E002CE4A8 /* BlobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
+		00CF92DB28F88A7E002CE4A8 /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		00CF92DC28F88A7E002CE4A8 /* FeaturedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedItem.swift; sourceTree = "<group>"; };
+		00CF92DE28F88A7E002CE4A8 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		00CF92DF28F88A7E002CE4A8 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		00CF92E028F88A7E002CE4A8 /* PreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
+		00CF92E128F88A7E002CE4A8 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		00CF92E228F88A7E002CE4A8 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		00CF92E428F88A7E002CE4A8 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		00CF92E528F88A7E002CE4A8 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		00CF92E628F88A7E002CE4A8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00CF930728F88BD7002CE4A8 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		00CF930828F88BD7002CE4A8 /* InputStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputStyle.swift; sourceTree = "<group>"; };
+		00CF930928F88BD7002CE4A8 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		00CF930A28F88BD7002CE4A8 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
+		00CF930B28F88BD7002CE4A8 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +130,7 @@
 				0047795928E5E2C4001AE090 /* Model */,
 				0047797128E76129001AE090 /* Views */,
 				0047796C28E75C14001AE090 /* ViewModels */,
+				00CF92CC28F8896E002CE4A8 /* Courses */,
 				0047794D28E5DF1F001AE090 /* Assets.xcassets */,
 				0047795E28E60F96001AE090 /* GoogleService-Info.plist */,
 				0047794F28E5DF1F001AE090 /* Preview Content */,
@@ -129,6 +180,94 @@
 				00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		00CF92CC28F8896E002CE4A8 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92CD28F889F8002CE4A8 /* Course 1 Build a SwiftUI app for iOS 15 */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		00CF92CD28F889F8002CE4A8 /* Course 1 Build a SwiftUI app for iOS 15 */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92D828F88A7E002CE4A8 /* Components */,
+				00CF92DD28F88A7E002CE4A8 /* Model */,
+				00CF930628F88BD7002CE4A8 /* Styles */,
+				00CF92E328F88A7E002CE4A8 /* Navigation */,
+				00CF92CE28F88A7E002CE4A8 /* Views */,
+			);
+			path = "Course 1 Build a SwiftUI app for iOS 15";
+			sourceTree = "<group>";
+		};
+		00CF92CE28F88A7E002CE4A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92CF28F88A7E002CE4A8 /* MatchedView.swift */,
+				00CF92D028F88A7E002CE4A8 /* SearchView.swift */,
+				00CF92D128F88A7E002CE4A8 /* CourseView.swift */,
+				00CF92D228F88A7E002CE4A8 /* HomeView.swift */,
+				00CF92D328F88A7E002CE4A8 /* Modals */,
+				00CF92D728F88A7E002CE4A8 /* AccountView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00CF92D328F88A7E002CE4A8 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92D428F88A7E002CE4A8 /* ModalView.swift */,
+				00CF92D528F88A7E002CE4A8 /* SignInView.swift */,
+				00CF92D628F88A7E002CE4A8 /* SignUpView.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		00CF92D828F88A7E002CE4A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92D928F88A7E002CE4A8 /* CourseItem.swift */,
+				00CF92DA28F88A7E002CE4A8 /* BlobView.swift */,
+				00CF92DB28F88A7E002CE4A8 /* HexagonView.swift */,
+				00CF92DC28F88A7E002CE4A8 /* FeaturedItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		00CF92DD28F88A7E002CE4A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92DE28F88A7E002CE4A8 /* Model.swift */,
+				00CF92DF28F88A7E002CE4A8 /* Suggestion.swift */,
+				00CF92E028F88A7E002CE4A8 /* PreferenceKeys.swift */,
+				00CF92E128F88A7E002CE4A8 /* Course.swift */,
+				00CF92E228F88A7E002CE4A8 /* Tab.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00CF92E328F88A7E002CE4A8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				00CF92E428F88A7E002CE4A8 /* TabBar.swift */,
+				00CF92E528F88A7E002CE4A8 /* NavigationBar.swift */,
+				00CF92E628F88A7E002CE4A8 /* ContentView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		00CF930628F88BD7002CE4A8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				00CF930728F88BD7002CE4A8 /* Styles.swift */,
+				00CF930828F88BD7002CE4A8 /* InputStyle.swift */,
+				00CF930928F88BD7002CE4A8 /* Animations.swift */,
+				00CF930A28F88BD7002CE4A8 /* AnimatableFontModifier.swift */,
+				00CF930B28F88BD7002CE4A8 /* AngularButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,15 +350,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CF92F828F88A7E002CE4A8 /* TabBar.swift in Sources */,
+				00CF930C28F88BD7002CE4A8 /* Styles.swift in Sources */,
 				0047795828E5E095001AE090 /* CourseInformation.swift in Sources */,
+				00CF92F128F88A7E002CE4A8 /* HexagonView.swift in Sources */,
 				0047797028E75CA5001AE090 /* AddOrEditCourseViewModel.swift in Sources */,
+				00CF92EA28F88A7E002CE4A8 /* HomeView.swift in Sources */,
+				00CF92EE28F88A7E002CE4A8 /* AccountView.swift in Sources */,
 				00CF92A528ED2F11002CE4A8 /* CourseDetailsViewModel.swift in Sources */,
+				00CF92EB28F88A7E002CE4A8 /* ModalView.swift in Sources */,
+				00CF92F728F88A7E002CE4A8 /* Tab.swift in Sources */,
 				0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddOrEditCourseSheet.swift in Sources */,
+				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,
 				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
+				00CF92F528F88A7E002CE4A8 /* PreferenceKeys.swift in Sources */,
 				00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */,
+				00CF930D28F88BD7002CE4A8 /* InputStyle.swift in Sources */,
+				00CF92F228F88A7E002CE4A8 /* FeaturedItem.swift in Sources */,
+				00CF92F028F88A7E002CE4A8 /* BlobView.swift in Sources */,
+				00CF92EC28F88A7E002CE4A8 /* SignInView.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
+				00CF931028F88BD7002CE4A8 /* AngularButtonStyle.swift in Sources */,
+				00CF930F28F88BD7002CE4A8 /* AnimatableFontModifier.swift in Sources */,
+				00CF92F428F88A7E002CE4A8 /* Suggestion.swift in Sources */,
+				00CF92EF28F88A7E002CE4A8 /* CourseItem.swift in Sources */,
+				00CF92ED28F88A7E002CE4A8 /* SignUpView.swift in Sources */,
+				00CF92E728F88A7E002CE4A8 /* MatchedView.swift in Sources */,
+				00CF92F328F88A7E002CE4A8 /* Model.swift in Sources */,
+				00CF92F628F88A7E002CE4A8 /* Course.swift in Sources */,
+				00CF930E28F88BD7002CE4A8 /* Animations.swift in Sources */,
+				00CF92FA28F88A7E002CE4A8 /* ContentView.swift in Sources */,
+				00CF92E828F88A7E002CE4A8 /* SearchView.swift in Sources */,
+				00CF92E928F88A7E002CE4A8 /* CourseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
