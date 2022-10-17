@@ -10,7 +10,7 @@ import SwiftUI
 struct StrokeStyle: ViewModifier {
     var cornerRadius: CGFloat
     @Environment(\.colorScheme) var colorScheme
-    func body(content: Content) -> some View {
+    internal func body(content: Content) -> some View {
         content.overlay(
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .stroke(

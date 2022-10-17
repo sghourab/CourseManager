@@ -121,12 +121,6 @@ struct HomeView: View {
             Image("Blob 1")
                 .offset(x: 250, y: -100)
         )
-//        .sheet(isPresented: $showCourse) {
-//            HomeView()
-//        } content: {
-//        CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
-//        }
-
         .sheet(isPresented: $showCourse) {
             CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
         }

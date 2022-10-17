@@ -13,7 +13,7 @@ class AddOrEditCourseViewModel: ObservableObject {
     @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
     private var cancellables = Set<AnyCancellable>()
 
-    func addCourse(course: CourseInformation) {
+    private func addCourse(course: CourseInformation) {
         do {
             try CourseRepository.collection.addDocument(from: course)
         } catch {

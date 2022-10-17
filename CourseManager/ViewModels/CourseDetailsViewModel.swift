@@ -28,8 +28,6 @@ class CourseDetailsViewModel: ObservableObject {
                 application.open(websiteURL)
             }
         }
-        
-     
     }
     
     func getCourseInformation(courseID: String) {

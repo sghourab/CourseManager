@@ -10,8 +10,8 @@ import SwiftUI
 struct CourseDetailsView: View {
     var courseID: String
     @StateObject var viewModel = CourseDetailsViewModel()
-    @State var showingAddCourseSheet: Bool = false
-    @State var isOpeningCourse = false
+    @State private var showingAddCourseSheet: Bool = false
+    @State private var isOpeningCourse = false
     var view = ContentView()
 
     var body: some View {
@@ -37,7 +37,6 @@ struct CourseDetailsView: View {
             Spacer()
             
         }.onAppear(perform: {
-            print(courseID)
             viewModel.getCourseInformation(courseID: courseID)
         })
         .navigationTitle("Course Information")

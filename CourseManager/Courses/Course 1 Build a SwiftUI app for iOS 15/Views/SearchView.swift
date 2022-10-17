@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var text = ""
-    @State var show = false
+    @State private var text = ""
+    @State private var show = false
     @Namespace var namespace
     @State var selectedIndex = 0
     @Environment(\.presentationMode) var presentationMode

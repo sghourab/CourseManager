@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AddOrEditCourseSheet: View {
     @StateObject var viewModel = AddOrEditCourseViewModel()
-    @State var courseInfoToEdit = false
+    @State private var courseInfoToEdit = false
     @Environment(\.dismiss) var dismiss
-    @State var editViewIsOpened = false
-    var course: CourseInformation
+    @State private var editViewIsOpened = false
+    private var course: CourseInformation
 
     init(course: CourseInformation) {
         self.course = course

@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct BlobView: View {
-    @State var appear = false
+    @State private var appear = false
     var body: some View {
-        // BlobShape()
         TimelineView(.animation) { timeline in
             let now = timeline.date.timeIntervalSinceReferenceDate
             let angle = Angle.degrees(now.remainder(dividingBy: 3)*30)

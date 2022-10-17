@@ -10,8 +10,8 @@ import SwiftUI
 struct NavigationBar: View {
     var title = ""
     @Binding var hasScrolled: Bool
-    @State var showSearch = false
-    @State var showAccount = false
+    @State private var showSearch = false
+    @State private var showAccount = false
     @AppStorage("showModal") var showModal = false
 
     var body: some View {
@@ -44,7 +44,7 @@ struct NavigationBar: View {
                 }
 
                 Button {
-                    //          showAccount = true
+                    showAccount = true
                     withAnimation {
                         showModal = true
                     }
@@ -71,9 +71,9 @@ struct NavigationBar: View {
         .frame(maxHeight: .infinity, alignment: .top)
     }
 }
-
-struct NavigationBar_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationBar(title: "Featured", hasScrolled: .constant(false))
-    }
-}
+//
+//struct NavigationBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationBar(title: "Featured", hasScrolled: .constant(false))
+//    }
+//}
