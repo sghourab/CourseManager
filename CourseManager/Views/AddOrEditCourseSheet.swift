@@ -11,6 +11,7 @@ struct AddOrEditCourseSheet: View {
     @StateObject var viewModel = AddOrEditCourseViewModel()
     @State var courseInfoToEdit = false
     @Environment(\.dismiss) var dismiss
+    @State var editViewIsOpened = false
     var course: CourseInformation
 
     init(course: CourseInformation) {
@@ -29,9 +30,12 @@ struct AddOrEditCourseSheet: View {
                 }
                 commentsSection
                 submitButtonSection
-                    .disabled(disableForm)
-            }.onAppear(perform: {
+                    .disabled(isFormDisabled)
+            }
+            .onAppear(perform: {
+                if !editViewIsOpened {
                 setUpViewModelCourseInformationToEdit()
+                }
             })
 
             .navigationTitle("Course Information")
@@ -92,27 +96,19 @@ struct AddOrEditCourseSheet: View {
     var submitButtonSection: some View {
         Section {
             Button {
-                handleSumitTapped()
+                handleSubmitTapped()
             } label: {
-                HStack {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .overlay(alignment: .center) {
-                            Text("Submit")
-                                .fontWeight(.bold)
-                                .foregroundStyle(.white)
-                                .font(.title3)
-                        }
-                        .padding(.horizontal, 20)
-                }
+                ButtonLabelStyle(label: "Submit")
             }
         }
     }
 
-    var disableForm: Bool {
+    var isFormDisabled: Bool {
         viewModel.course.name.count < 5 || viewModel.course.url.count < 5
     }
 
     func setUpViewModelCourseInformationToEdit() {
+        editViewIsOpened = true
         if course.name != "", course.url != "" {
             courseInfoToEdit = true
             viewModel.course = course
@@ -123,7 +119,7 @@ struct AddOrEditCourseSheet: View {
         dismiss()
     }
 
-    func handleSumitTapped() {
+    func handleSubmitTapped() {
         if courseInfoToEdit == true {
             viewModel.edit()
         }

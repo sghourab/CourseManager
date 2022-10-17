@@ -46,6 +46,7 @@ struct CourseView: View {
         .onChange(of: show) { _ in
             fadeOut()
         }
+        
     }
 
     var cover: some View {

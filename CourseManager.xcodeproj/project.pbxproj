@@ -20,6 +20,7 @@
 		0047796828E61183001AE090 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0047796728E61183001AE090 /* FirebaseFirestoreSwift */; };
 		0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796D28E75C3B001AE090 /* CoursesViewModel.swift */; };
 		0047797028E75CA5001AE090 /* AddOrEditCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */; };
+		00585EC728FC867D00BD3D6C /* ButtonLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */; };
 		00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */; };
 		00CF92A528ED2F11002CE4A8 /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */; };
 		00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */; };
@@ -61,6 +62,8 @@
 		0047795E28E60F96001AE090 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0047796D28E75C3B001AE090 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditCourseViewModel.swift; sourceTree = "<group>"; };
+		00585EC328FB3E6B00BD3D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelStyle.swift; sourceTree = "<group>"; };
 		00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
 		00CF92A428ED2F11002CE4A8 /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
 		00CF92B728F3D50B002CE4A8 /* FirebaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepository.swift; sourceTree = "<group>"; };
@@ -126,10 +129,12 @@
 		0047794828E5DF1E001AE090 /* CourseManager */ = {
 			isa = PBXGroup;
 			children = (
+				00585EC328FB3E6B00BD3D6C /* Info.plist */,
 				00CF92B628F3D3BE002CE4A8 /* Repository */,
 				0047795928E5E2C4001AE090 /* Model */,
 				0047797128E76129001AE090 /* Views */,
 				0047796C28E75C14001AE090 /* ViewModels */,
+				00585EC528FC865C00BD3D6C /* Components */,
 				00CF92CC28F8896E002CE4A8 /* Courses */,
 				0047794D28E5DF1F001AE090 /* Assets.xcassets */,
 				0047795E28E60F96001AE090 /* GoogleService-Info.plist */,
@@ -172,6 +177,14 @@
 				00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		00585EC528FC865C00BD3D6C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		00CF92B628F3D3BE002CE4A8 /* Repository */ = {
@@ -362,6 +375,7 @@
 				00CF92F728F88A7E002CE4A8 /* Tab.swift in Sources */,
 				0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddOrEditCourseSheet.swift in Sources */,
+				00585EC728FC867D00BD3D6C /* ButtonLabelStyle.swift in Sources */,
 				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,
 				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
 				00CF92F528F88A7E002CE4A8 /* PreferenceKeys.swift in Sources */,
@@ -514,6 +528,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CourseManager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CourseManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,6 +557,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CourseManager/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CourseManager/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

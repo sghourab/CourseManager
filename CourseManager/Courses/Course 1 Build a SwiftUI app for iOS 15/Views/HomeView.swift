@@ -36,20 +36,18 @@ struct HomeView: View {
                     if !show {
                         cards
                     } else {
-                        ForEach(courses) { course in
+                        ForEach(courses) { _ in
                             Rectangle()
                                 .fill(.white)
                                 .frame(height: 300)
                                 .cornerRadius(30)
                                 .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 10)
                                 .opacity(0.3)
-                            .padding(.horizontal, 30)
+                                .padding(.horizontal, 30)
                         }
                     }
                 }
                 .padding(.horizontal, 20)
-            
-               
             }
             .coordinateSpace(name: "scroll")
           
@@ -58,10 +56,9 @@ struct HomeView: View {
             })
             .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
-                //   .opacity(hasScrolled ? 1 : 0)
             )
             if show {
-                 detail
+                detail
             }
             
         }.statusBar(hidden:!showStatusBar)
@@ -78,7 +75,6 @@ struct HomeView: View {
 
     var scrollDetection: some View {
         GeometryReader { proxy in
-            //    Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0)
@@ -111,7 +107,7 @@ struct HomeView: View {
                                 .frame(height: 230)
                                 .offset(x: 32, y: -80)
                                 .offset(x: minX / 2)
-                    )
+                        )
                         .onTapGesture {
                             showCourse = true
                             selectedIndex = index
@@ -125,6 +121,12 @@ struct HomeView: View {
             Image("Blob 1")
                 .offset(x: 250, y: -100)
         )
+//        .sheet(isPresented: $showCourse) {
+//            HomeView()
+//        } content: {
+//        CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
+//        }
+
         .sheet(isPresented: $showCourse) {
             CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
         }
@@ -141,20 +143,21 @@ struct HomeView: View {
                         showStatusBar = false
                         selectedID = course.id
                     }
-                   
-            }
+                }
         }
     }
+
     var detail: some View {
         ForEach(courses) { course in
             if course.id == selectedID {
-            CourseView(namespace: namespace, course: course, show: $show)
-                .zIndex(1)
-                .transition(.asymmetric(
-                    insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))))
+                CourseView(namespace: namespace, course: course, show: $show)
+                    .zIndex(1)
+                    .transition(.asymmetric(
+                        insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                        removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                    ))
+            }
         }
-    }
     }
 }
 
@@ -163,6 +166,5 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .preferredColorScheme(.dark)
             .environmentObject(Model())
-        
     }
 }

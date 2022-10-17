@@ -14,10 +14,13 @@ struct CoursesView: View {
     @ObservedObject private var viewModel = CoursesViewModel()
 
     var body: some View {
-        NavigationView {
+       NavigationView {
             listOfCourses
                 .onAppear {
                     self.viewModel.fetchData()
+                }
+                .onDisappear {
+                    self.viewModel.firestoreListener?.remove()
                 }
 
                 .toolbar {
@@ -47,7 +50,7 @@ struct CoursesView: View {
                         Text(course.name)
                         Spacer()
                         Group {
-                            course.status == .complete ? Status.complete.image : course.status == .inProgress ? Status.inProgress.image : Status.todo.image
+                            course.status.image
                         }
                         .foregroundStyle(course.status == .todo ? Color.primary : Color.green, Color.primary)
                     }

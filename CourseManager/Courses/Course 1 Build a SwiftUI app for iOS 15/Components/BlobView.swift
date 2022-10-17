@@ -17,8 +17,7 @@ struct BlobView: View {
             let x = cos(angle.radians)
             let angle2 = Angle.degrees(now.remainder(dividingBy: 6)*5)
             let x2 = cos(angle2.radians)
-            // Text("Value: \(x)")
-
+            
             Canvas { context, size in
                 context.fill(path(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), x: x, x2: x2), with: .linearGradient(Gradient(colors: [.pink, .blue]), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 200, y: 200)))
             }
@@ -53,17 +52,3 @@ struct BlobView_Previews: PreviewProvider {
     }
 }
 
-struct BlobShape: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let width = rect.size.width
-        let height = rect.size.height
-        path.move(to: CGPoint(x: 0.48389*width, y: 0.9584*height))
-        path.addCurve(to: CGPoint(x: 0.9394*width, y: 0.49081*height), control1: CGPoint(x: 0.72797*width, y: 0.9584*height), control2: CGPoint(x: 0.80071*width, y: 0.71026*height))
-        path.addCurve(to: CGPoint(x: 0.48389*width, y: 0.02322*height), control1: CGPoint(x: 1.07814*width, y: 0.27129*height), control2: CGPoint(x: 0.83347*width, y: 0.1297*height))
-        path.addCurve(to: CGPoint(x: 0.02838*width, y: 0.49081*height), control1: CGPoint(x: 0.13432*width, y: -0.08326*height), control2: CGPoint(x: 0.10056*width, y: 0.19444*height))
-        path.addCurve(to: CGPoint(x: 0.48389*width, y: 0.9584*height), control1: CGPoint(x: -0.0438*width, y: 0.78719*height), control2: CGPoint(x: 0.23981*width, y: 0.9584*height))
-        path.closeSubpath()
-        return path
-    }
-}

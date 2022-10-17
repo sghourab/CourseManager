@@ -22,23 +22,17 @@ struct CourseDetailsView: View {
                 gitHubLinkSection
             }
             statusSection
-            if viewModel.course.status == Status.complete {
+            if viewModel.course.status == .complete {
                 dateCompletedSection
             }
             if viewModel.course.comments != "" {
                 commentsSection
             }
-            
-            NavigationLink(destination: viewModel.course.name.contains("Build a SwiftUI app for iOS 15") ? ContentView() : nil) {
-                Text("Open")
-                    .frame(minWidth: 0, maxWidth: 300)
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(20)
-                    .font(.headline)
-               
-            }.buttonStyle(PlainButtonStyle())
+            Button {
+                viewModel.goToSecondaryApp()
+            } label: {
+                ButtonLabelStyle(label: "Open")
+            }
             
             Spacer()
             
@@ -144,4 +138,5 @@ struct CourseDetailsView: View {
             }
         }
     }
+
 }

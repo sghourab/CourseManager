@@ -13,10 +13,11 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 class CoursesViewModel: ObservableObject {
+    var firestoreListener: ListenerRegistration?
     @Published var courses = [CourseInformation]()
 
     func fetchData() {
-        CourseRepository.collection.addSnapshotListener { querySnapshot, error in
+        firestoreListener = CourseRepository.collection.addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -26,9 +27,11 @@ class CoursesViewModel: ObservableObject {
                 }
                 self.courses = documents.compactMap { queryDocumentSnapshot -> CourseInformation? in
                     try? queryDocumentSnapshot.data(as: CourseInformation.self)
+                    
                 }
             }
         }
+        
     }
 
     func deleteCourseFromFirestore(id: String) {
