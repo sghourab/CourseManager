@@ -25,7 +25,6 @@ struct CourseManagerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //CoursesView()
             CoursesView()
                 .environmentObject(model)
         }

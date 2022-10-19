@@ -46,7 +46,6 @@ struct CourseView: View {
         .onChange(of: show) { _ in
             fadeOut()
         }
-        
     }
 
     var cover: some View {
@@ -188,14 +187,12 @@ struct CourseView: View {
     }
 
     func fadeIn() {
-        withAnimation(.easeOut.delay(0.3)) {
-            appear[0] = true
-        }
-        withAnimation(.easeOut.delay(0.4)) {
-            appear[1] = true
-        }
-        withAnimation(.easeOut.delay(0.5)) {
-            appear[2] = true
+        var delay = 0.3
+        for i in 0 ..< appear.count {
+            withAnimation(.easeOut.delay(delay)) {
+                appear[i] = true
+                delay += 0.1
+            }
         }
     }
 

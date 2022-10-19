@@ -50,7 +50,7 @@ struct AccountView: View {
                         .offset(x: 110, y: 0)
                         .scaleEffect(1.2)
                 )
-            Text("Samar Ghourab")
+            Text("Samar")
                 .font(.title.weight(.semibold))
             HStack {
                 Image(systemName: "location")
