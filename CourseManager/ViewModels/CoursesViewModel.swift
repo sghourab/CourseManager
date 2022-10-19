@@ -11,15 +11,13 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import SwiftUI
-// import CoreMIDI
 
 class CoursesViewModel: ObservableObject {
+    var firestoreListener: ListenerRegistration?
     @Published var courses = [CourseInformation]()
 
-    private var db = Firestore.firestore()
-
     func fetchData() {
-        db.collection("courses").addSnapshotListener { querySnapshot, error in
+        firestoreListener = CourseRepository.collection.addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -29,8 +27,29 @@ class CoursesViewModel: ObservableObject {
                 }
                 self.courses = documents.compactMap { queryDocumentSnapshot -> CourseInformation? in
                     try? queryDocumentSnapshot.data(as: CourseInformation.self)
+                    
                 }
             }
         }
+        
+    }
+
+    func deleteCourseFromFirestore(id: String) {
+        CourseRepository.collection.document(id).delete { error in
+            if let error = error {
+                print("Error removing document: \(error)")
+            } else {
+                print("Course successfully removed")
+            }
+        }
+    }
+
+    func handleOnDeleteSwipeAction(offSets: IndexSet) {
+        let index = offSets[offSets.startIndex]
+        let selectedID = courses[index].id
+
+        deleteCourseFromFirestore(id: selectedID ?? "")
+
+        courses.remove(atOffsets: offSets)
     }
 }
