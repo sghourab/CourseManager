@@ -16,6 +16,7 @@ class CourseDetailsViewModel: ObservableObject {
     
     func goToSecondaryApp() {
         //hardcoded values to be replaced soon
+        //update CourseInformation model to include appPath
         let application = UIApplication.shared
         let secondAppPath = "BuildASwiftUIAppforiOS15://"
         guard let websiteURL = URL(string: "https://github.com/sghourab/SwiftUIPractice1") else {
