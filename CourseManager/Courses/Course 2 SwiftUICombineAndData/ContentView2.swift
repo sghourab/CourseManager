@@ -17,7 +17,6 @@ struct ContentView2: View {
                 TrackableScrollView(offsetChanged: {
                     offset in
                     contentOffset = offset.y
-                    print("contentOffset", contentOffset)
                 }) {
                     content
                 }
