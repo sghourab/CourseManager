@@ -29,10 +29,10 @@ struct CourseDetailsView: View {
                 commentsSection
             }
             
-            // This code (lines 32 - 47) will be changed to remove all hardcoded data and have better logic
+            #warning("This code (lines 32 - 47) will be changed to remove all hardcoded data and have better logic during refactoring")
             if viewModel.course.name == "SwiftUI Combine and Data " {
                 NavigationLink {
-                    ContentView2()
+                    ContentViewSwiftUICombineCourse()
                 } label: {
                     ButtonLabelStyle(label: "Open")
                 }

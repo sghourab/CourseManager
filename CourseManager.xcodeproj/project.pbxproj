@@ -49,7 +49,7 @@
 		00CF930E28F88BD7002CE4A8 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930928F88BD7002CE4A8 /* Animations.swift */; };
 		00CF930F28F88BD7002CE4A8 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930A28F88BD7002CE4A8 /* AnimatableFontModifier.swift */; };
 		00CF931028F88BD7002CE4A8 /* AngularButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF930B28F88BD7002CE4A8 /* AngularButtonStyle.swift */; };
-		00F2C82C2902564F00F43A45 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C82B2902564F00F43A45 /* ContentView2.swift */; };
+		00F2C82C2902564F00F43A45 /* ContentViewSwiftUICombineCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C82B2902564F00F43A45 /* ContentViewSwiftUICombineCourse.swift */; };
 		00F2C8342902589300F43A45 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C8332902589300F43A45 /* VisualEffectBlur.swift */; };
 		00F2C836290258FE00F43A45 /* AccountBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C835290258FE00F43A45 /* AccountBackground.swift */; };
 		00F2C83929025A2E00F43A45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2C83829025A2E00F43A45 /* Package.swift */; };
@@ -102,7 +102,7 @@
 		00CF930928F88BD7002CE4A8 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		00CF930A28F88BD7002CE4A8 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
 		00CF930B28F88BD7002CE4A8 /* AngularButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngularButtonStyle.swift; sourceTree = "<group>"; };
-		00F2C82B2902564F00F43A45 /* ContentView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		00F2C82B2902564F00F43A45 /* ContentViewSwiftUICombineCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewSwiftUICombineCourse.swift; sourceTree = "<group>"; };
 		00F2C8332902589300F43A45 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		00F2C835290258FE00F43A45 /* AccountBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBackground.swift; sourceTree = "<group>"; };
 		00F2C83829025A2E00F43A45 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 				00F2C84329025B4100F43A45 /* Utilities */,
 				00F2C837290259C900F43A45 /* Models */,
 				00F2C83A29025A6B00F43A45 /* Components */,
-				00F2C82B2902564F00F43A45 /* ContentView2.swift */,
+				00F2C82B2902564F00F43A45 /* ContentViewSwiftUICombineCourse.swift */,
 				00F2C8322902585B00F43A45 /* Graphics */,
 			);
 			path = "Course 2 SwiftUICombineAndData";
@@ -471,7 +471,7 @@
 				00CF92F728F88A7E002CE4A8 /* Tab.swift in Sources */,
 				00F2C84229025AEC00F43A45 /* GradientIcon.swift in Sources */,
 				0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */,
-				00F2C82C2902564F00F43A45 /* ContentView2.swift in Sources */,
+				00F2C82C2902564F00F43A45 /* ContentViewSwiftUICombineCourse.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddOrEditCourseSheet.swift in Sources */,
 				00585EC728FC867D00BD3D6C /* ButtonLabelStyle.swift in Sources */,
 				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,

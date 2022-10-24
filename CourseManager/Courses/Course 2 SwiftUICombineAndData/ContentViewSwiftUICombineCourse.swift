@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView2: View {
+struct ContentViewSwiftUICombineCourse: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var contentOffset = CGFloat(0)
     
@@ -32,10 +32,11 @@ struct ContentView2: View {
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
+       // #warning("update code below to use assets to control dark theme colors")
         .accentColor(colorScheme == .dark ? .white : Color(red: 0.12, green: 0.012, blue: 0.42))
     }
     
-    var content: some View {
+    private var content: some View {
         VStack {
             VStack {
                 NavigationLink {
@@ -81,8 +82,8 @@ struct ContentView2: View {
     }
 }
 
-struct ContentView2_Previews: PreviewProvider {
+struct ContentViewSwiftUICombineCourse_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentViewSwiftUICombineCourse()
     }
 }
