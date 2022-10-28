@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 // MARK: - VisualEffectBlur
 
 struct VisualEffectBlur<Content: View>: View {

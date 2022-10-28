@@ -15,8 +15,7 @@ class CourseDetailsViewModel: ObservableObject {
     @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
     
     func goToSecondaryApp() {
-        //hardcoded values to be replaced soon
-        //update CourseInformation model to include appPath
+        #warning("hardcoded values to be replaced during code refactoring")
         let application = UIApplication.shared
         let secondAppPath = "BuildASwiftUIAppforiOS15://"
         guard let websiteURL = URL(string: "https://github.com/sghourab/SwiftUIPractice1") else {
@@ -32,7 +31,7 @@ class CourseDetailsViewModel: ObservableObject {
     }
     
     func getCourseInformation(courseID: String) {
-        let courseRef = CourseRepository.collection.document(courseID)
+        let courseRef = Repository.courseCollection.document(courseID)
         courseRef.getDocument(as: CourseInformation.self) { result in
             switch result {
             case .success(let course):

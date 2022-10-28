@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentViewSwiftUICombineCourse: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var contentOffset = CGFloat(0)
+    @State private var showCertificates: Bool = false
     
     var body: some View {
         NavigationView {
@@ -22,7 +23,7 @@ struct ContentViewSwiftUICombineCourse: View {
                 }
                 VisualEffectBlur(blurStyle: .systemMaterial)
                     .opacity(contentOffset < -16 ? 1 : 0)
-                    .animation(.easeIn)
+                    .animation(.easeIn, value: contentOffset < -16)
                     .ignoresSafeArea()
                     .frame(height: 0)
             }
@@ -32,12 +33,27 @@ struct ContentViewSwiftUICombineCourse: View {
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
-       // #warning("update code below to use assets to control dark theme colors")
-        .accentColor(colorScheme == .dark ? .white : Color(red: 0.12, green: 0.012, blue: 0.42))
+       // Updated the code below (line 37) to use color from Assests. Denis commented on last week pull request which I updated this week.
+        .accentColor(Color("NavigationViewColor"))
     }
     
     private var content: some View {
         VStack {
+            
+            ProfileRow()
+                .onTapGesture {
+                    showCertificates.toggle()
+                }
+            
+            VStack {
+                NotificationRow()
+                
+                divider
+                
+                LiteModeRow()
+            }
+            .blurBackground()
+            .padding(.top, 20)
             VStack {
                 NavigationLink {
                     FAQView()
@@ -57,11 +73,7 @@ struct ContentViewSwiftUICombineCourse: View {
                     MenuRow(title: "YouTube Channel", leftIcon: "play.rectangle.fill", rightIcon: "link")
                 }
             }
-            .padding(16)
-            .background(Color("Background 1"))
-            .background(VisualEffectBlur(blurStyle: .systemUltraThinMaterialDark))
-            .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.white, lineWidth: 1).blendMode(.overlay))
-            .mask(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .blurBackground()
             .padding(.top, 20)
             
             Text("Version 1.0")
@@ -75,6 +87,9 @@ struct ContentViewSwiftUICombineCourse: View {
         .padding(.top, 20)
         .padding(.horizontal, 20)
         .padding(.bottom, 10)
+        .sheet(isPresented: $showCertificates) {
+            CertificatesView()
+        }
     }
     
     var divider: some View {

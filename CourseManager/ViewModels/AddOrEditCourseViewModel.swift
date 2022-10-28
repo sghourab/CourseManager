@@ -15,7 +15,7 @@ class AddOrEditCourseViewModel: ObservableObject {
 
     private func addCourse(course: CourseInformation) {
         do {
-            try CourseRepository.collection.addDocument(from: course)
+            try Repository.courseCollection.addDocument(from: course)
         } catch {
             print(error)
         }
@@ -25,7 +25,7 @@ class AddOrEditCourseViewModel: ObservableObject {
         guard let courseID = course.id else {
             return
         }
-        let idRef = CourseRepository.collection.document(courseID)
+        let idRef = Repository.courseCollection.document(courseID)
 
         idRef.updateData([
             "name": course.name,

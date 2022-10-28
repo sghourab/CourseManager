@@ -15,12 +15,13 @@ struct PackagesView: View {
         ZStack(alignment: .top) {
             TrackableScrollView(offsetChanged: { offsetPoint in
                 contentOffset = offsetPoint.y
+
             }) {
                 content
             }
             VisualEffectBlur(blurStyle: .systemMaterial)
                 .opacity(contentOffset < -16 ? 1 : 0)
-                .animation(.easeIn)
+                .animation(.easeIn, value: contentOffset < -16)
                 .ignoresSafeArea()
                 .frame(height: 0)
         }
