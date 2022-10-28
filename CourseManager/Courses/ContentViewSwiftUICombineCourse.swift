@@ -11,6 +11,7 @@ struct ContentViewSwiftUICombineCourse: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var contentOffset = CGFloat(0)
     @State private var showCertificates: Bool = false
+    private let website: String = "https://www.youtube.com/c/DesignCodeTeam/videos"
     
     var body: some View {
         NavigationView {
@@ -69,8 +70,10 @@ struct ContentViewSwiftUICombineCourse: View {
                 }
                 
                 divider
-                Link(destination: URL(string: "https://www.youtube.com")!) {
-                    MenuRow(title: "YouTube Channel", leftIcon: "play.rectangle.fill", rightIcon: "link")
+                if let designCodeWebsite = URL(string: website) {
+                    Link(destination: designCodeWebsite) {
+                        MenuRow(title: "YouTube Channel", leftIcon: "play.rectangle.fill", rightIcon: "link")
+                    }
                 }
             }
             .blurBackground()
