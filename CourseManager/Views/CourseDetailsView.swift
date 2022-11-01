@@ -28,12 +28,23 @@ struct CourseDetailsView: View {
             if viewModel.course.comments != "" {
                 commentsSection
             }
-            Button {
-                viewModel.goToSecondaryApp()
-            } label: {
-                ButtonLabelStyle(label: "Open")
-            }
             
+            #warning("This code (lines 32 - 47) will be changed to remove all hardcoded data and have better logic during refactoring")
+            if viewModel.course.name == "SwiftUI Combine and Data " {
+                NavigationLink {
+                    ContentViewSwiftUICombineCourse()
+                } label: {
+                    ButtonLabelStyle(label: "Open")
+                }
+
+            } else {
+                Button {
+                    viewModel.goToSecondaryApp()
+
+                } label: {
+                    ButtonLabelStyle(label: "Open")
+                }
+            }
             Spacer()
             
         }.onAppear(perform: {
@@ -137,5 +148,4 @@ struct CourseDetailsView: View {
             }
         }
     }
-
 }

@@ -16,9 +16,7 @@ struct CoursesView: View {
     var body: some View {
        NavigationView {
             listOfCourses
-                .onAppear {
-                    self.viewModel.fetchData()
-                }
+           
                 .onDisappear {
                     self.viewModel.firestoreListener?.remove()
                 }
