@@ -57,10 +57,13 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
             )
-            if show {
+            //this is how the course details sheet shows up:
+//            if show {
+//                detail
+//            }
+            .sheet(isPresented: $show) {
                 detail
             }
-            
         }.statusBar(hidden:!showStatusBar)
             .onChange(of: show) { newValue in
                 withAnimation(.closeCard) {
