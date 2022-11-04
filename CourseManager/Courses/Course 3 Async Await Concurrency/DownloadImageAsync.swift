@@ -9,7 +9,7 @@ import SwiftUI
 
 class DownloadImageAsyncImageLoader {
     let url = URL(string: "https://picsum.photos/200")!
-    
+
     func handleResponse(data: Data?, response: URLResponse?) -> UIImage? {
         guard
             let data = data,
@@ -21,7 +21,7 @@ class DownloadImageAsyncImageLoader {
         }
         return image
     }
-    
+
     func downloadWithAsync() async throws -> UIImage? {
         do {
             let (data, response) = try await URLSession.shared.data(from: url, delegate: nil)
@@ -35,7 +35,7 @@ class DownloadImageAsyncImageLoader {
 class DownloadImageAsyncViewModel: ObservableObject {
     @Published var image: UIImage? = nil
     let loader = DownloadImageAsyncImageLoader()
-    
+
     func fetchImage() async {
         let image = try? await loader.downloadWithAsync()
         await MainActor.run {
@@ -46,7 +46,7 @@ class DownloadImageAsyncViewModel: ObservableObject {
 
 struct DownloadImageAsync: View {
     @StateObject private var viewModel = DownloadImageAsyncViewModel()
-    
+
     var body: some View {
         ZStack {
             if let image = viewModel.image {

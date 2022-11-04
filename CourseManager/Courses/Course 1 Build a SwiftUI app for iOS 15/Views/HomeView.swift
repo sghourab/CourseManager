@@ -57,7 +57,7 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
             )
-            //this is how the course details sheet shows up:
+            //this is how the course details sheet shows up, refactor to use .sheet:
 //            if show {
 //                detail
 //            }

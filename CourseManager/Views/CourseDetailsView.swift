@@ -38,6 +38,7 @@ struct CourseDetailsView: View {
                 }
 
             } else if viewModel.course.name == "Build a SwiftUI app for iOS 15"{
+                //working on refactoring course 1 to integrate into main app
                // Button {
                 //    viewModel.goToSecondaryApp()
                 NavigationLink {

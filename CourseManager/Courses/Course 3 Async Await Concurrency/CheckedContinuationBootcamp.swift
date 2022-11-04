@@ -16,7 +16,7 @@ class CheckedContinuationBootcampNetworkManager {
             throw error
         }
     }
-    
+
     func getData2(url: URL) async throws -> Data {
         return try await withCheckedThrowingContinuation { continuation in
             URLSession.shared.dataTask(with: url) { data, _, error in
@@ -36,13 +36,13 @@ class CheckedContinuationBootcampNetworkManager {
 class CheckedContinuationBootcampViewModel: ObservableObject {
     @Published var image: UIImage? = nil
     let networkManager = CheckedContinuationBootcampNetworkManager()
-    
+
     func getImage() async {
         guard let url = URL(string: "https://picsum.photos/300") else { return }
-        
+
         do {
             let data = try await networkManager.getData2(url: url)
-            
+
             if let image = UIImage(data: data) {
                 await MainActor.run(body: {
                     self.image = image
@@ -56,7 +56,7 @@ class CheckedContinuationBootcampViewModel: ObservableObject {
 
 struct CheckedContinuationBootcamp: View {
     @StateObject private var viewModel = CheckedContinuationBootcampViewModel()
-    
+
     var body: some View {
         ZStack {
             if let image = viewModel.image {
