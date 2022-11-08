@@ -34,7 +34,6 @@ struct ContentViewSwiftUICombineCourse: View {
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
-       // Updated the code below (line 37) to use color from Assests. Denis commented on last week pull request which I updated this week.
         .accentColor(Color("NavigationViewColor"))
     }
     

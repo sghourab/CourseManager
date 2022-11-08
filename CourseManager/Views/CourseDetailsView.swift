@@ -37,10 +37,13 @@ struct CourseDetailsView: View {
                     ButtonLabelStyle(label: "Open")
                 }
 
-            } else {
-                Button {
-                    viewModel.goToSecondaryApp()
-
+            } else if viewModel.course.name == "Build a SwiftUI app for iOS 15"{
+                //working on refactoring course 1 to integrate into main app
+               // Button {
+                //    viewModel.goToSecondaryApp()
+                NavigationLink {
+                    ContentView()
+                  //  ContentViewSwiftUICombineCourse()
                 } label: {
                     ButtonLabelStyle(label: "Open")
                 }
