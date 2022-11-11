@@ -7,10 +7,26 @@
 
 import SwiftUI
 
-struct StrokeStyle: ViewModifier {
+struct TitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.footnote.weight(.semibold))
+            .foregroundColor(.secondary)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(20)
+            .accessibilityAddTraits(.isHeader)
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(TitleModifier())
+    }
+}
+struct StrokeModifier: ViewModifier {
     var cornerRadius: CGFloat
     @Environment(\.colorScheme) var colorScheme
-    internal func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         content.overlay(
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .stroke(
@@ -28,6 +44,6 @@ struct StrokeStyle: ViewModifier {
 
 extension View {
     func strokeStyle(cornerRadius: CGFloat = 30) -> some View {
-        modifier(StrokeStyle(cornerRadius: cornerRadius))
+        modifier(StrokeModifier(cornerRadius: cornerRadius))
     }
 }

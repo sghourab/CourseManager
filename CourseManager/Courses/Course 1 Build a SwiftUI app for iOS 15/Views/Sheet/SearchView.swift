@@ -12,7 +12,7 @@ struct SearchView: View {
     @State private var show = false
     @Namespace var namespace
     @State var selectedIndex = 0
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationView {
@@ -49,7 +49,7 @@ struct SearchView: View {
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: Button {
-                presentationMode.wrappedValue.dismiss()
+                dismiss()
             } label: {
                 Text("Done").bold()
             })

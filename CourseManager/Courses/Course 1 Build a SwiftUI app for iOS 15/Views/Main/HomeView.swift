@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var hasScrolled = false
     @Namespace var namespace
     @State var show = false
     @State var showStatusBar = true
@@ -16,22 +15,21 @@ struct HomeView: View {
     @State var showCourse = false
     @State var selectedIndex = 0
     @EnvironmentObject var model: Model
-    
+    @AppStorage("isLiteMode") var isLiteMode = true
+
     var body: some View {
         ZStack {
             Color("Background")
                 .ignoresSafeArea()
             ScrollView {
-                scrollDetection
-                
                 featured
-                
+
                 Text("Courses".uppercased())
                     .font(.footnote.weight(.semibold))
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 20)
-                
+
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 20)], spacing: 20) {
                     if !show {
                         cards
@@ -50,20 +48,15 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             }
             .coordinateSpace(name: "scroll")
-          
-            .safeAreaInset(edge: .top, content: {
-                Color.clear.frame(height: 70)
-            })
-            .overlay(
-                NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
-            )
-            //this is how the course details sheet shows up, refactor to use .sheet:
-//            if show {
-//                detail
-//            }
-            .sheet(isPresented: $show) {
+            .navigationTitle("Featured")
+            .navigationBarHidden(show ? true : false)
+            .toolbar {
+                NavigationBar()
+            }
+            if show {
                 detail
             }
+
         }.statusBar(hidden:!showStatusBar)
             .onChange(of: show) { newValue in
                 withAnimation(.closeCard) {
@@ -81,18 +74,8 @@ struct HomeView: View {
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0)
-        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
-            withAnimation {
-                if value < 0 {
-                    hasScrolled = true
-                } else {
-                    hasScrolled = false
-                }
-            }
-           
-        })
     }
-    
+
     var featured: some View {
         TabView {
             ForEach(Array(featuredCourses.enumerated()), id: \.offset) { index, course in
@@ -115,6 +98,8 @@ struct HomeView: View {
                             showCourse = true
                             selectedIndex = index
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityAddTraits(.isButton)
                 }
             }
         }
@@ -128,10 +113,10 @@ struct HomeView: View {
             CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
         }
     }
-    
+
     var cards: some View {
         ForEach(courses) { course in
-           
+
             CourseItem(namespace: namespace, course: course, show: $show)
                 .onTapGesture {
                     withAnimation(.openCard) {
@@ -141,6 +126,8 @@ struct HomeView: View {
                         selectedID = course.id
                     }
                 }
+                .accessibilityElement(children: .combine)
+                .accessibilityAddTraits(.isButton)
         }
     }
 

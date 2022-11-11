@@ -12,6 +12,7 @@ struct SignUpView: View {
         case email
         case password
     }
+
     @State var email = ""
     @State var password = ""
     @FocusState var focusedField: Field?
@@ -20,7 +21,7 @@ struct SignUpView: View {
     @State var passwordY: CGFloat = 0
     @State var circleColor: Color = .blue
     @EnvironmentObject var model: Model
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Sign up")
@@ -60,7 +61,6 @@ struct SignUpView: View {
             .controlSize(.large)
             .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
 
-
             Group {
                 Text("By clicking on ")
                     + Text("_Create an account_")
@@ -68,7 +68,7 @@ struct SignUpView: View {
                 Divider()
                 HStack {
                     Text("Already have an account?")
-                    Button {model.selectedModal = .signIn} label: {
+                    Button { model.selectedModal = .signIn } label: {
                         Text("**Sign in**")
                     }
                 }
@@ -84,11 +84,10 @@ struct SignUpView: View {
                 .frame(width: 68, height: 68)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .offset(y: circleY)
-            
         )
         .coordinateSpace(name: "container")
         .strokeStyle(cornerRadius: 30)
-        
+
         .onChange(of: focusedField) { value in
             withAnimation {
                 if value == .email {
@@ -101,11 +100,10 @@ struct SignUpView: View {
             }
         }
     }
-    
+
     var geometry: some View {
         GeometryReader { proxy in
             Color.clear.preference(key: CirclePreferenceKey.self, value: proxy.frame(in: .named("container")).minY)
-            
         }
     }
 }
@@ -113,9 +111,9 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-        SignUpView()
-            .preferredColorScheme(.light)
-            .environmentObject(Model())
+            SignUpView()
+                .preferredColorScheme(.light)
+                .environmentObject(Model())
         }
     }
 }

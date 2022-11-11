@@ -30,24 +30,17 @@ struct CourseDetailsView: View {
             }
             
             #warning("This code (lines 32 - 47) will be changed to remove all hardcoded data and have better logic during refactoring")
-            if viewModel.course.name == "SwiftUI Combine and Data " {
                 NavigationLink {
-                    ContentViewSwiftUICombineCourse()
+                    if viewModel.course.name == "SwiftUI Combine and Data " {
+                        ContentViewSwiftUICombineCourse()
+                    } else if viewModel.course.name == "Build a SwiftUI app for iOS 15" {
+                        ContentView()
+                    } else if viewModel.course.name == "UI and Animations in SwiftUI"{
+                        ContentViewWeather()
+                    }
                 } label: {
                     ButtonLabelStyle(label: "Open")
-                }
-
-            } else if viewModel.course.name == "Build a SwiftUI app for iOS 15"{
-                //working on refactoring course 1 to integrate into main app
-               // Button {
-                //    viewModel.goToSecondaryApp()
-                NavigationLink {
-                    ContentView()
-                  //  ContentViewSwiftUICombineCourse()
-                } label: {
-                    ButtonLabelStyle(label: "Open")
-                }
-            }
+                }            
             Spacer()
             
         }.onAppear(perform: {
