@@ -31,7 +31,7 @@ struct CourseView: View {
             .coordinateSpace(name: "scroll")
             .onAppear { model.showDetail = true }
             .onDisappear { model.showDetail = false }
-            .background(Color("Background"))
+            .background(AppColors.background)
             .mask(RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous))
             .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
             .scaleEffect(viewState.width / -500 + 1)
@@ -116,7 +116,6 @@ struct CourseView: View {
 
     var button: some View {
         Button {
-          //  dismiss()
             withAnimation(.closeCard) {
                 show.toggle()
                 model.showDetail.toggle()
@@ -207,9 +206,7 @@ struct CourseView: View {
     }
 
     func fadeOut() {
-        for i in 0 ..< appear.count {
-            appear[i] = false
-        }
+        appear = Array(repeating: false, count: appear.count)
     }
 
     func close() {

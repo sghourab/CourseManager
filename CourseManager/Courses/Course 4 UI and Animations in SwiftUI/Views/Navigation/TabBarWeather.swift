@@ -19,8 +19,6 @@ struct TabBarWeather: View {
                         .stroke(Color.tabBarBorder, lineWidth: 0.5)
                 }
             HStack {
-                // MARK: Expand Button
-
                 Button {
                     action()
                 } label: {

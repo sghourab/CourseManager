@@ -36,7 +36,7 @@ struct ModalView: View {
             .rotation3DEffect(.degrees(viewState.height/20), axis: (x: 1, y: 0, z: 0))
             .hueRotation(.degrees(viewState.width/5))
             .gesture(drag)
-            .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
+            .shadow(color: AppColors.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
             .opacity(appear[0] ? 1 : 0)
             .offset(y: appear[0] ? 0 : 200)
             .padding(20)
@@ -46,6 +46,7 @@ struct ModalView: View {
                     .offset(y: appear[2] ? 0 : 10)
                     .blur(radius: appear[2] ? 0 : 40)
                     .allowsHitTesting(false)
+                    .accessibilityHidden(true)
             )
             Button {
                 dismissModal()

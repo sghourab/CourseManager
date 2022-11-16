@@ -19,7 +19,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Color("Background")
+            MyColor.blu
                 .ignoresSafeArea()
             ScrollView {
                 featured
@@ -39,7 +39,7 @@ struct HomeView: View {
                                 .fill(.white)
                                 .frame(height: 300)
                                 .cornerRadius(30)
-                                .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 10)
+                                .shadow(color: AppColors.shadow, radius: 20, x: 0, y: 10)
                                 .opacity(0.3)
                                 .padding(.horizontal, 30)
                         }
@@ -84,7 +84,7 @@ struct HomeView: View {
                     FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -10), axis: (x: 0, y: 1, z: 0))
-                        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                        .shadow(color: AppColors.shadow.opacity(0.3), radius: 10, x: 0, y: 10)
                         .blur(radius: abs(minX / 40))
                         .overlay(
                             Image(course.image)
@@ -108,6 +108,7 @@ struct HomeView: View {
         .background(
             Image("Blob 1")
                 .offset(x: 250, y: -100)
+                .accessibilityHidden(true)
         )
         .sheet(isPresented: $showCourse) {
             CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)

@@ -11,7 +11,6 @@ struct ContentViewWeather: View {
     var body: some View {
         HomeViewWeather()
             .navigationBarHidden(true)
-
     }
 }
 

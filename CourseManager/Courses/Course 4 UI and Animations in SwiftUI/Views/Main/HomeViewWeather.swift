@@ -5,12 +5,12 @@
 //  Created by Summer Crow on 2022-11-09.
 //
 
-import SwiftUI
 import BottomSheet
+import SwiftUI
 
 enum BottomSheetPosition: CGFloat, CaseIterable {
-    case top = 0.83
-    case middle = 0.385
+    case top = 0.83 // 702/844 = position of sheet in 'top' position / overall height of screen
+    case middle = 0.385 // 325/844 = position of sheet in 'middle' position / overall height of screen
 }
 
 struct HomeViewWeather: View {
@@ -22,7 +22,6 @@ struct HomeViewWeather: View {
         (bottomSheetTranslation - BottomSheetPosition.middle.rawValue) / (BottomSheetPosition.top.rawValue - BottomSheetPosition.middle.rawValue)
     }
 
-
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -32,6 +31,7 @@ struct HomeViewWeather: View {
                 ZStack {
                     Color.weatherBackground
                         .ignoresSafeArea()
+
                     Image("Background")
                         .resizable()
                         .ignoresSafeArea()
@@ -42,56 +42,53 @@ struct HomeViewWeather: View {
                         .padding(.top, 257)
                         .offset(y: -bottomSheetTranslationProrated * imageOffset)
 
-                    VStack(spacing: -10 * (1 - bottomSheetTranslationProrated)) {
-                        Text("Montreal")
-                            .font(.largeTitle)
+                    locationForecast
 
-                        VStack {
-                            Text(attributedString)
-                            Text("H:24°   L:18°")
-                                .font(.title3.weight(.semibold))
-                                .opacity(1 - bottomSheetTranslationProrated)
-
-                        }
-
-                        Spacer()
-                    }
-                    .padding(.top, 51)
-                    .offset(y: -bottomSheetTranslationProrated * 46)
-
-                    BottomSheetView(position: $bottomSheetPosition) {
-                    } content: {
+                    BottomSheetView(position: $bottomSheetPosition) {} content: {
                         ForecastView(bottomSheetTranslationProrated: bottomSheetTranslationProrated)
-                    }
-                    .onBottomSheetDrag { translation in
+                    }.onBottomSheetDrag { translation in
                         bottomSheetTranslation = translation / screenHeight
                         withAnimation(.easeInOut) {
-                               if bottomSheetPosition == BottomSheetPosition.top {
-                                   hasDragged = true
-                               } else {
-                                   hasDragged = false
-                               }
-                           }
+                            hasDragged = bottomSheetPosition == .top ? true : false
+                        }
                     }
                     TabBarWeather(action: {
                         bottomSheetPosition = .top
                     })
                     .offset(y: bottomSheetTranslationProrated * 115)
-
                 }
             }
             .navigationBarBackButtonHidden(true)
         }
     }
-    private var attributedString: AttributedString {
-            var string = AttributedString("19°" + (hasDragged ? " | " : "\n ") + "Mostly Clear")
 
-            if let temp = string.range(of: "19°") {
-                string[temp].font = .system(size: (96 - (bottomSheetTranslationProrated * (96 - 20))), weight: hasDragged ? .semibold : .thin)
-                string[temp].foregroundColor = hasDragged ? .secondary : .primary
+    private var locationForecast: some View {
+        VStack(spacing: -10 * (1 - bottomSheetTranslationProrated)) {
+            Text("Montreal")
+                .font(.largeTitle)
+
+            VStack {
+                Text(attributedString)
+                Text("H:24°   L:18°")
+                    .font(.title3.weight(.semibold))
+                    .opacity(1 - bottomSheetTranslationProrated)
             }
 
-            if let pipe = string.range(of: " | ") {
+            Spacer()
+        }
+        .padding(.top, 51)
+        .offset(y: -bottomSheetTranslationProrated * 46)
+    }
+
+    private var attributedString: AttributedString {
+        var string = AttributedString("19°" + (hasDragged ? " | " : "\n ") + "Mostly Clear")
+
+        if let temp = string.range(of: "19°") {
+            string[temp].font = .system(size: 96 - (bottomSheetTranslationProrated * (96 - 20)), weight: hasDragged ? .semibold : .thin)
+            string[temp].foregroundColor = hasDragged ? .secondary : .primary
+        }
+
+        if let pipe = string.range(of: " | ") {
             string[pipe].font = .title3.weight(.semibold)
             string[pipe].foregroundColor = .secondary.opacity(bottomSheetTranslationProrated)
         }

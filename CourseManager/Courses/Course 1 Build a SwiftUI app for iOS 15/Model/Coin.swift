@@ -8,17 +8,29 @@
 import Foundation
 
 struct Coin: Identifiable, Decodable {
-    var id: Int
-    var coin_name: String
-    var acronym: String
-    var logo: String
+    let id: Int
+    let coinName: String
+    let acronym: String
+    let logo: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case coinName = "coin_name"
+        case acronym
+        case logo
+    }
 }
 
 class CoinModel: ObservableObject {
-    @Published var coins: [Coin] = []
+    @Published private(set) var coins: [Coin] = []
     
+    init() {
+        Task(priority: .high) {
+            await fetchCoins()
+        }
+    }
     @MainActor
-    func fetchCoins() async {
+    private func fetchCoins() async {
         do {
             guard let url = URL(string: "https://random-data-api.com/api/crypto_coin/random_crypto_coin?size=10") else {
                 return

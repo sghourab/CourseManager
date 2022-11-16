@@ -22,7 +22,7 @@ struct SectionView: View {
                     .offset(y: 120)
                     .padding(.bottom, 200)
             }
-            .background(Color("Background"))
+            .background(AppColors.background)
             .ignoresSafeArea()
 
             button

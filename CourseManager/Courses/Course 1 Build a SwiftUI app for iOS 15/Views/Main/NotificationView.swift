@@ -10,7 +10,7 @@ import SwiftUI
 struct NotificationView: View {
     var body: some View {
         ZStack {
-            Color("Background").ignoresSafeArea()
+            AppColors.background.ignoresSafeArea()
             ScrollView {
                 sectionsSection
             }

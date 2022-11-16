@@ -57,11 +57,9 @@ struct AccountView: View {
             }
             .task {
                 await fetchAddress()
-                await coinModel.fetchCoins()
             }
             .refreshable {
                 await fetchAddress()
-                await coinModel.fetchCoins()
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
@@ -169,7 +167,7 @@ struct AccountView: View {
                     }
                     .frame(width: 32, height: 32)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(coin.coin_name)
+                        Text(coin.coinName)
                         Text(coin.acronym)
                             .font(.caption)
                             .foregroundColor(.secondary)

@@ -17,7 +17,6 @@ struct CourseInformation: Identifiable, Codable {
     var status: Status
     var dateOfCompletion: Date
     var comments: String
-    //var destinationView: AnyView
 }
 
 enum Status: String, Codable, Equatable, CaseIterable {
