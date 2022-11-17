@@ -19,11 +19,11 @@ struct ContentView: View {
                 case .home:
                     HomeView()
                 case .explore:
-                    AccountView()
+                    ExploreView()
                 case .notifications:
-                    AccountView()
+                    NotificationView()
                 case .library:
-                    AccountView()
+                    LibraryView()
                 }
             }
 
@@ -34,14 +34,13 @@ struct ContentView: View {
                     ModalView()
                 }
                 .zIndex(1)
+                .accessibilityAddTraits(.isModal)
             }
         }
-        .navigationBarHidden(true)
-        
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            Color.clear.frame(height: 44)
+            Color.clear.frame(height: 88)
         }
-        
+        .dynamicTypeSize(.large ... .xxLarge)
     }
 }
 

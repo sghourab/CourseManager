@@ -39,7 +39,7 @@ struct CertificateCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 30.0, style: .continuous))
         .ifLite(!isLiteMode, transform: { view in
             view
-                .shadow(color: Color("Shadow").opacity(0.5), radius: 30, x: 0, y: 15)
+                .shadow(color: AppColors.shadow.opacity(0.5), radius: 30, x: 0, y: 15)
         })
     }
     

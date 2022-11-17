@@ -13,7 +13,8 @@ struct ModalView: View {
     @State var viewState: CGSize = .zero
     @State var isDismissed = false
     @State var appear = [false, false, false]
-    
+    @AppStorage("isLogged") var isLogged = false
+
     var body: some View {
         ZStack {
             Color.clear.background(.regularMaterial)
@@ -35,7 +36,7 @@ struct ModalView: View {
             .rotation3DEffect(.degrees(viewState.height/20), axis: (x: 1, y: 0, z: 0))
             .hueRotation(.degrees(viewState.width/5))
             .gesture(drag)
-            .shadow(color: Color("Shadow").opacity(0.2), radius: 30, x: 0, y: 30)
+            .shadow(color: AppColors.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
             .opacity(appear[0] ? 1 : 0)
             .offset(y: appear[0] ? 0 : 200)
             .padding(20)
@@ -45,9 +46,10 @@ struct ModalView: View {
                     .offset(y: appear[2] ? 0 : 10)
                     .blur(radius: appear[2] ? 0 : 40)
                     .allowsHitTesting(false)
+                    .accessibilityHidden(true)
             )
             Button {
-               dismissModal()
+                dismissModal()
             } label: {
                 Image(systemName: "xmark")
                     .font(.body.weight(.bold))
@@ -59,9 +61,8 @@ struct ModalView: View {
             .padding(20)
             .opacity(appear[1] ? 1 : 0)
             .offset(y: appear[1] ? 0 : -200)
-           
         }
-        .onAppear{
+        .onAppear {
             withAnimation(.easeOut) {
                 appear[0] = true
             }
@@ -73,6 +74,7 @@ struct ModalView: View {
             }
         }
     }
+
     var drag: some Gesture {
         DragGesture()
             .onChanged { value in
@@ -83,25 +85,24 @@ struct ModalView: View {
             }
             .onEnded { value in
                 if value.translation.height > 200 {
-              dismissModal()
+                    dismissModal()
                     
                 } else {
-                withAnimation {
-                    viewState = .zero
+                    withAnimation {
+                        viewState = .zero
+                    }
                 }
             }
-            }
     }
+
     func dismissModal() {
-     
-            withAnimation {
-                isDismissed = true
-            }
-            withAnimation(.linear.delay(0.3)) {
-                showModal = false
-            }
+        withAnimation {
+            isDismissed = true
+        }
+        withAnimation(.linear.delay(0.3)) {
+            showModal = false
+        }
     }
-    
 }
 
 struct ModalView_Previews: PreviewProvider {

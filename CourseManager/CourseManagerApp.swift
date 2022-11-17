@@ -86,7 +86,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 struct CourseManagerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var model = Model()
-
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .regular)
+        UINavigationBar.appearance().standardAppearance = appearance
+    }
     var body: some Scene {
         WindowGroup {
             CoursesView()
