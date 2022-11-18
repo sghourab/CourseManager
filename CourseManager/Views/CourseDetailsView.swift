@@ -12,6 +12,7 @@ struct CourseDetailsView: View {
     @StateObject var viewModel = CourseDetailsViewModel()
     @State private var showingAddCourseSheet: Bool = false
     @State private var isOpeningCourse = false
+    @AppStorage("isLogged") var isLogged = false
     var view = ContentView()
 
     var body: some View {
@@ -30,21 +31,22 @@ struct CourseDetailsView: View {
             }
             
             #warning("This code (lines 32 - 47) will be changed to remove all hardcoded data and have better logic during refactoring")
-                NavigationLink {
-                    if viewModel.course.name == "SwiftUI Combine and Data " {
-                        ContentViewSwiftUICombineCourse()
-                    } else if viewModel.course.name == "Build a SwiftUI app for iOS 15" {
-                        ContentView()
-                    } else if viewModel.course.name == "UI and Animations in SwiftUI"{
-                        ContentViewWeather()
-                    }
-                } label: {
-                    ButtonLabelStyle(label: "Open")
-                }            
+            NavigationLink {
+                if viewModel.course.name == "SwiftUI Combine and Data " {
+                    ContentViewSwiftUICombineCourse()
+                } else if viewModel.course.name == "Build a SwiftUI app for iOS 15" {
+                    ContentView()
+                } else if viewModel.course.name == "UI and Animations in SwiftUI" {
+                    ContentViewWeather()
+                }
+            } label: {
+                ButtonLabelStyle(label: "Open")
+            }
             Spacer()
             
         }.onAppear(perform: {
             viewModel.getCourseInformation(courseID: courseID)
+            isLogged = false
         })
         .navigationTitle("Course Information")
 
@@ -58,7 +60,7 @@ struct CourseDetailsView: View {
             }.sheet(isPresented: $showingAddCourseSheet, onDismiss: {
                 viewModel.getCourseInformation(courseID: courseID)
             }) {
-                AddOrEditCourseSheet(course: CourseInformation(id: viewModel.course.id, name: viewModel.course.name, url: viewModel.course.url, gitHubURL: viewModel.course.gitHubURL, status: viewModel.course.status, dateOfCompletion: viewModel.course.dateOfCompletion, comments: viewModel.course.comments))
+                AddOrEditCourseSheet(course: CourseInformation(id: viewModel.course.id, name: viewModel.course.name, url: viewModel.course.url, imageName: viewModel.course.imageName, progressPercentage: 0.5, gitHubURL: viewModel.course.gitHubURL, status: viewModel.course.status, dateOfCompletion: viewModel.course.dateOfCompletion, comments: viewModel.course.comments))
             }
         }
     }

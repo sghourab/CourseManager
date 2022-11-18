@@ -73,6 +73,11 @@ struct ModalView: View {
                 appear[2] = true
             }
         }
+        .onChange(of: isLogged) { newValue in
+            if newValue {
+                dismissModal()
+            }
+        }
     }
 
     var drag: some Gesture {

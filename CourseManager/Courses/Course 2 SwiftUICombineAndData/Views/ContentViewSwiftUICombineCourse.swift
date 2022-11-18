@@ -30,9 +30,7 @@ struct ContentViewSwiftUICombineCourse: View {
             }
             .frame(maxHeight: .infinity, alignment: .top)
             .background(AccountBackground())
-            .navigationBarHidden(true)
         }
-        .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(Color("NavigationViewColor"))
     }

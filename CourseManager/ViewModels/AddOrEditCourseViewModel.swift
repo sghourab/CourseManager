@@ -10,7 +10,7 @@ import Firebase
 import Foundation
 
 class AddOrEditCourseViewModel: ObservableObject {
-    @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
+    @Published var course: CourseInformation = .init(id: "", name: "", url: "", imageName: "", progressPercentage: 0.5, gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
     private var cancellables = Set<AnyCancellable>()
 
     private func addCourse(course: CourseInformation) {
@@ -29,9 +29,11 @@ class AddOrEditCourseViewModel: ObservableObject {
 
         idRef.updateData([
             "name": course.name,
+            "imageName": course.imageName,
             "url": course.url,
             "gitHubURL": course.gitHubURL,
             "status": course.status.rawValue,
+            "progressPercentage": course.progressPercentage,
             "dateOfCompletion": course.dateOfCompletion,
             "comments": course.comments
         ])

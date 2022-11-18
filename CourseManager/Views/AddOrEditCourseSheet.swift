@@ -12,6 +12,7 @@ struct AddOrEditCourseSheet: View {
     @State private var courseInfoToEdit = false
     @Environment(\.dismiss) var dismiss
     @State private var editViewIsOpened = false
+    @State private var progressPercentage: Double = 0
     private var course: CourseInformation
 
     init(course: CourseInformation) {
@@ -22,8 +23,10 @@ struct AddOrEditCourseSheet: View {
         NavigationView {
             Form {
                 courseNameSection
+                courseImageNameSection
                 courseURLSection
                 gitHubURLSection
+                percentageProgressSection
                 statusPickerSection
                 if viewModel.course.status == .complete {
                     dateCompletedCalendarSection
@@ -34,7 +37,7 @@ struct AddOrEditCourseSheet: View {
             }
             .onAppear(perform: {
                 if !editViewIsOpened {
-                setUpViewModelCourseInformationToEdit()
+                    setUpViewModelCourseInformationToEdit()
                 }
             })
 
@@ -53,6 +56,12 @@ struct AddOrEditCourseSheet: View {
     var courseNameSection: some View {
         Section(header: Text("Course Name")) {
             TextField("Enter course name", text: $viewModel.course.name)
+        }.textFieldStyle(.roundedBorder)
+    }
+
+    var courseImageNameSection: some View {
+        Section(header: Text("Course Image Name")) {
+            TextField("Enter course image name", text: $viewModel.course.imageName)
         }.textFieldStyle(.roundedBorder)
     }
 
@@ -77,6 +86,21 @@ struct AddOrEditCourseSheet: View {
                 }
             }
         }
+    }
+
+    var percentageProgressSection: some View {
+        Section(header: Text("Progress")) {
+            Text("\(viewModel.course.progressPercentage * 100, specifier: "%.0f")% Complete")
+
+            Slider(value: $viewModel.course.progressPercentage, in: 0 ... 1, step: 0.2) {
+                Text("whatever")
+            } minimumValueLabel: {
+                Text("0")
+            } maximumValueLabel: {
+                Text("100")
+            }
+
+        }.listRowSeparator(.hidden)
     }
 
     var dateCompletedCalendarSection: some View {
@@ -132,6 +156,6 @@ struct AddOrEditCourseSheet: View {
 
 struct AddCourseSheet_Previews: PreviewProvider {
     static var previews: some View {
-        AddOrEditCourseSheet(course: CourseInformation(id: "abcd", name: "biology", url: "biology.com", gitHubURL: "github.com/biology", status: .todo, dateOfCompletion: Date(), comments: "will do this in a week"))
+        AddOrEditCourseSheet(course: CourseInformation(name: "biology", url: "biology.com", imageName: "Course1CoverImage", progressPercentage: 0.7, gitHubURL: "github.com/biology", status: .todo, dateOfCompletion: Date(), comments: "will do this in a week"))
     }
 }

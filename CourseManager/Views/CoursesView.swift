@@ -9,55 +9,56 @@ import SwiftUI
 
 struct CoursesView: View {
     @State private var showingSheet = false
-    @State private var selectedCourseID = ""
-
+    @State private var selectedCourseID = "" 
     @ObservedObject private var viewModel = CoursesViewModel()
-
+    
     var body: some View {
-       NavigationView {
-            listOfCourses
-           
-                .onDisappear {
-                    self.viewModel.firestoreListener?.remove()
-                }
+        NavigationStack {
+            ZStack {
+                MainColors.accent.ignoresSafeArea()
+                
+                listOfCourses
 
-                .toolbar {
-                    Button {
-                        showingSheet.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title2)
-                    }.sheet(isPresented: $showingSheet) {
-                        AddOrEditCourseSheet(course: CourseInformation(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: ""))
+                    .onDisappear {
+                        self.viewModel.firestoreListener?.remove()
                     }
-                }
-                .navigationTitle("Courses")
+                
+                    .toolbar {
+                        Button {
+                            showingSheet.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.title2)
+                        }.sheet(isPresented: $showingSheet) {
+                            AddOrEditCourseSheet(course: CourseInformation(id: "", name: "", url: "", imageName: "", progressPercentage: 0.5, gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: ""))
+                        }
+                    }
+            }
+            .navigationTitle("Courses")
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
-
+    
     var listOfCourses: some View {
-        List {
+        ScrollView {
             ForEach(viewModel.courses) { course in
-
-                NavigationLink {
-                    if let courseID = course.id {
-                        CourseDetailsView(courseID: courseID)
-                    }
-                } label: {
-                    HStack {
-                        Text(course.name)
-                        Spacer()
-                        Group {
-                            course.status.image
+                if let course = course, let courseID = course.id {
+                    VStack {
+                        ZStack(alignment: .bottomTrailing) {
+                            VStack {
+                                CourseRowImageItem(courseName: course.name, courseID: courseID, imageName: course.imageName)
+                                        
+                                    .padding(.horizontal, 20)
+                                    .padding(.top, 20)
+                            }
+                            CircularProgressView(value: course.progressPercentage, courseID: courseID)
+                                .offset(x: 0, y: 10)
                         }
-                        .foregroundStyle(course.status == .todo ? Color.primary : Color.green, Color.primary)
                     }
                 }
-            }.onDelete { offsets in
-
-                viewModel.handleOnDeleteSwipeAction(offSets: offsets)
             }
-        }.listStyle(.automatic)
+        }
     }
 }
 

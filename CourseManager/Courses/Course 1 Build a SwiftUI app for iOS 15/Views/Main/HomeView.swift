@@ -19,7 +19,7 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            MyColor.blu
+            AppColors.background
                 .ignoresSafeArea()
             ScrollView {
                 featured

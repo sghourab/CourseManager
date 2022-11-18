@@ -12,24 +12,8 @@ import Foundation
 import SwiftUI
 
 class CourseDetailsViewModel: ObservableObject {
-    @Published var course: CourseInformation = .init(id: "", name: "", url: "", gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
-    
-    func goToSecondaryApp() {
-        #warning("hardcoded values to be replaced during code refactoring")
-        let application = UIApplication.shared
-        let secondAppPath = "BuildASwiftUIAppforiOS15://"
-        guard let websiteURL = URL(string: "https://github.com/sghourab/SwiftUIPractice1") else {
-            return
-        }
-        if let appUrl = URL(string: secondAppPath) {
-            if application.canOpenURL(appUrl) {
-                application.open(appUrl)
-            } else {
-                application.open(websiteURL)
-            }
-        }
-    }
-    
+    @Published var course: CourseInformation = .init(id: "", name: "", url: "", imageName: "", progressPercentage: 0.5, gitHubURL: "", status: .todo, dateOfCompletion: Date(), comments: "")
+
     func getCourseInformation(courseID: String) {
         let courseRef = Repository.courseCollection.document(courseID)
         courseRef.getDocument(as: CourseInformation.self) { result in
