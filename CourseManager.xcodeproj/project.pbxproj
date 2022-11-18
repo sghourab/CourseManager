@@ -56,6 +56,7 @@
 		0070D119291EB64B00E6C266 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D118291EB64B00E6C266 /* PlayView.swift */; };
 		0070D11C291EB6B200E6C266 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11B291EB6B200E6C266 /* CircularView.swift */; };
 		0070D11E292409DE00E6C266 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11D292409DE00E6C266 /* AppColors.swift */; };
+		0070D1202926963500E6C266 /* HomeViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11F2926963500E6C266 /* HomeViewMain.swift */; };
 		0071BEA629099EE90074C83C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BEA529099EE90074C83C /* NotificationViewModel.swift */; };
 		0071BEA8290ADBAD0074C83C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BEA7290ADBAD0074C83C /* NetworkReachability.swift */; };
 		00A0C5C12911856C005ED2DC /* CourseCardConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0C5BB2911856B005ED2DC /* CourseCardConcurrency.swift */; };
@@ -166,6 +167,7 @@
 		0070D118291EB64B00E6C266 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		0070D11B291EB6B200E6C266 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		0070D11D292409DE00E6C266 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		0070D11F2926963500E6C266 /* HomeViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewMain.swift; sourceTree = "<group>"; };
 		0071BEA429098CCC0074C83C /* CourseManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CourseManager.entitlements; sourceTree = "<group>"; };
 		0071BEA529099EE90074C83C /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		0071BEA7290ADBAD0074C83C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				0047794B28E5DF1E001AE090 /* CoursesView.swift */,
 				0047795A28E5E364001AE090 /* AddOrEditCourseSheet.swift */,
 				00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */,
+				0070D11F2926963500E6C266 /* HomeViewMain.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,
 				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
 				0070D0F9291EAC1E00E6C266 /* ExploreView.swift in Sources */,
+				0070D1202926963500E6C266 /* HomeViewMain.swift in Sources */,
 				00A0C5C12911856C005ED2DC /* CourseCardConcurrency.swift in Sources */,
 				00CF92F528F88A7E002CE4A8 /* PreferenceKeys.swift in Sources */,
 				00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */,
