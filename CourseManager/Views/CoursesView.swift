@@ -54,6 +54,7 @@ struct CoursesView: View {
                             }
                             CircularProgressView(value: course.progressPercentage, courseID: courseID)
                                 .offset(x: 0, y: 10)
+                        
                         }
                     }
                 }
