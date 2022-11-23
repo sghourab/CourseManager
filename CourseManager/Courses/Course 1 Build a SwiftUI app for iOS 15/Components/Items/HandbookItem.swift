@@ -42,7 +42,7 @@ struct HandbookItem: View {
         .strokeStyle(cornerRadius: 30)
         .background(
             RoundedRectangle(cornerRadius: 30)
-                .fill(LinearGradient(colors: [handbook.color1, handbook.color2], startPoint: .top, endPoint: .bottomTrailing))
+                .fill(LinearGradient(colors: [handbook.colorTop, handbook.colorBottom], startPoint: .top, endPoint: .bottomTrailing))
                 .rotation3DEffect(.degrees(10), axis: (x: 0, y: 1, z: 0), anchor: .bottomTrailing)
                 .rotationEffect(.degrees(180))
                 .padding(.trailing, 40)
