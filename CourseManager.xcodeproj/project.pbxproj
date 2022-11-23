@@ -24,6 +24,9 @@
 		0047796828E61183001AE090 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0047796728E61183001AE090 /* FirebaseFirestoreSwift */; };
 		0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796D28E75C3B001AE090 /* CoursesViewModel.swift */; };
 		0047797028E75CA5001AE090 /* AddOrEditCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */; };
+		00560674292E795200DB5FCC /* CourseRowImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00560673292E795200DB5FCC /* CourseRowImageItem.swift */; };
+		00560676292E7A5900DB5FCC /* MainColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00560675292E7A5900DB5FCC /* MainColors.swift */; };
+		00560678292E7ACE00DB5FCC /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00560677292E7ACE00DB5FCC /* CircularProgressView.swift */; };
 		00585EC728FC867D00BD3D6C /* ButtonLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */; };
 		0070D0D6291BFC7F00E6C266 /* ContentViewWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D0D5291BFC7F00E6C266 /* ContentViewWeather.swift */; };
 		0070D0DA291BFCF900E6C266 /* Weather + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D0D9291BFCF900E6C266 /* Weather + Extensions.swift */; };
@@ -56,7 +59,7 @@
 		0070D119291EB64B00E6C266 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D118291EB64B00E6C266 /* PlayView.swift */; };
 		0070D11C291EB6B200E6C266 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11B291EB6B200E6C266 /* CircularView.swift */; };
 		0070D11E292409DE00E6C266 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11D292409DE00E6C266 /* AppColors.swift */; };
-		0070D1202926963500E6C266 /* HomeViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070D11F2926963500E6C266 /* HomeViewMain.swift */; };
+		0070D1202926963500E6C266 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0071BEA629099EE90074C83C /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BEA529099EE90074C83C /* NotificationViewModel.swift */; };
 		0071BEA8290ADBAD0074C83C /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BEA7290ADBAD0074C83C /* NetworkReachability.swift */; };
 		00A0C5C12911856C005ED2DC /* CourseCardConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0C5BB2911856B005ED2DC /* CourseCardConcurrency.swift */; };
@@ -135,6 +138,9 @@
 		0047795E28E60F96001AE090 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0047796D28E75C3B001AE090 /* CoursesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewModel.swift; sourceTree = "<group>"; };
 		0047796F28E75CA5001AE090 /* AddOrEditCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditCourseViewModel.swift; sourceTree = "<group>"; };
+		00560673292E795200DB5FCC /* CourseRowImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRowImageItem.swift; sourceTree = "<group>"; };
+		00560675292E7A5900DB5FCC /* MainColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColors.swift; sourceTree = "<group>"; };
+		00560677292E7ACE00DB5FCC /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		00585EC328FB3E6B00BD3D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelStyle.swift; sourceTree = "<group>"; };
 		0070D0D5291BFC7F00E6C266 /* ContentViewWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewWeather.swift; sourceTree = "<group>"; };
@@ -167,9 +173,6 @@
 		0070D118291EB64B00E6C266 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		0070D11B291EB6B200E6C266 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		0070D11D292409DE00E6C266 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		0070D1452927E63E00E6C266 /* CourseRowImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRowImageItem.swift; sourceTree = "<group>"; };
-		0070D1472927E66A00E6C266 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		0070D14A2927F59900E6C266 /* MainColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainColors.swift; path = CourseManager/Components/MainColors.swift; sourceTree = SOURCE_ROOT; };
 		0071BEA429098CCC0074C83C /* CourseManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CourseManager.entitlements; sourceTree = "<group>"; };
 		0071BEA529099EE90074C83C /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		0071BEA7290ADBAD0074C83C /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
@@ -332,7 +335,6 @@
 				0047794B28E5DF1E001AE090 /* CoursesView.swift */,
 				0047795A28E5E364001AE090 /* AddOrEditCourseSheet.swift */,
 				00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */,
-				0070D11F2926963500E6C266 /* HomeViewMain.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,8 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */,
-				0070D1452927E63E00E6C266 /* CourseRowImageItem.swift */,
-				0070D1472927E66A00E6C266 /* CircularProgressView.swift */,
+				00560673292E795200DB5FCC /* CourseRowImageItem.swift */,
+				00560677292E7ACE00DB5FCC /* CircularProgressView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -494,7 +496,7 @@
 		0070D1492927F58300E6C266 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				0070D14A2927F59900E6C266 /* MainColors.swift */,
+				00560675292E7A5900DB5FCC /* MainColors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -934,7 +936,7 @@
 				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,
 				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
 				0070D0F9291EAC1E00E6C266 /* ExploreView.swift in Sources */,
-				0070D1202926963500E6C266 /* HomeViewMain.swift in Sources */,
+				0070D1202926963500E6C266 /* (null) in Sources */,
 				00A0C5C12911856C005ED2DC /* CourseCardConcurrency.swift in Sources */,
 				00CF92F528F88A7E002CE4A8 /* PreferenceKeys.swift in Sources */,
 				00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */,
@@ -945,10 +947,12 @@
 				0070D112291EB48E00E6C266 /* ListRow.swift in Sources */,
 				00F2C85A29078D1500F43A45 /* ProfileRow.swift in Sources */,
 				0070D119291EB64B00E6C266 /* PlayView.swift in Sources */,
+				00560676292E7A5900DB5FCC /* MainColors.swift in Sources */,
 				00CF92EC28F88A7E002CE4A8 /* SignInView.swift in Sources */,
 				0070D0DC291BFE7500E6C266 /* HomeViewWeather.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
+				00560678292E7ACE00DB5FCC /* CircularProgressView.swift in Sources */,
 				0070D0E9291D493700E6C266 /* ForecastModel.swift in Sources */,
 				0070D0DA291BFCF900E6C266 /* Weather + Extensions.swift in Sources */,
 				00F2C8512907064000F43A45 /* ModelData.swift in Sources */,
@@ -958,7 +962,7 @@
 				0070D0ED291D58DA00E6C266 /* NavigationBarWeather.swift in Sources */,
 				0070D0F7291EABD400E6C266 /* NotificationView.swift in Sources */,
 				00F2C83F29025AAE00F43A45 /* PackageRow.swift in Sources */,
-				0070D1462927E63E00E6C266 /* CourseRowImageItem.swift in Sources */,
+				00560674292E795200DB5FCC /* CourseRowImageItem.swift in Sources */,
 				00A0C5C92911864E005ED2DC /* ContentViewConcurrency.swift in Sources */,
 				00CF931028F88BD7002CE4A8 /* AngularButtonStyle.swift in Sources */,
 				00CF930F28F88BD7002CE4A8 /* AnimatableFontModifier.swift in Sources */,
@@ -974,12 +978,10 @@
 				0070D0E5291C126900E6C266 /* ForecastView.swift in Sources */,
 				00A0C5C52911856C005ED2DC /* CourseListConcurrency.swift in Sources */,
 				00CF92F328F88A7E002CE4A8 /* Model.swift in Sources */,
-				0070D14B2927F59900E6C266 /* MainColors.swift in Sources */,
 				0027DCC3290977030015CCEF /* NotificationRow.swift in Sources */,
 				00CF92F628F88A7E002CE4A8 /* Course.swift in Sources */,
 				00CF930E28F88BD7002CE4A8 /* Animations.swift in Sources */,
 				0071BEA8290ADBAD0074C83C /* NetworkReachability.swift in Sources */,
-				0070D1482927E66A00E6C266 /* CircularProgressView.swift in Sources */,
 				0070D0D6291BFC7F00E6C266 /* ContentViewWeather.swift in Sources */,
 				00F2C83929025A2E00F43A45 /* Package.swift in Sources */,
 				00F2C858290723AB00F43A45 /* Extensions.swift in Sources */,

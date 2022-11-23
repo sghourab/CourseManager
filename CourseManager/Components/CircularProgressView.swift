@@ -2,7 +2,7 @@
 //  CircularProgressView.swift
 //  CourseManager
 //
-//  Created by Summer Crow on 2022-11-18.
+//  Created by Summer Crow on 2022-11-23.
 //
 
 import SwiftUI
@@ -34,7 +34,7 @@ struct CircularProgressView: View {
                     .frame(height: 60)
               
                     .onAppear {
-                        withAnimation(.spring().delay(0.5)) {
+                        withAnimation(.spring().delay(0.7)) {
                             appear = true
                         }
                     }

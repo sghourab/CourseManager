@@ -47,7 +47,7 @@ struct CoursesView: View {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
                             VStack {
-                                CourseRowImageItem(courseName: course.name, courseID: courseID, imageName: course.imageName)
+                                CourseRowImageItem(courseName: course.name, imageName: course.imageName)
                                         
                                     .padding(.horizontal, 20)
                                     .padding(.top, 20)
