@@ -15,7 +15,7 @@ import SwiftUI
 class CoursesViewModel: ObservableObject {
     var firestoreListener: ListenerRegistration?
     @Published var courses = [CourseInformation]()
-    
+
     init() {
         fetchData()
     }
@@ -31,11 +31,9 @@ class CoursesViewModel: ObservableObject {
                 }
                 self.courses = documents.compactMap { queryDocumentSnapshot -> CourseInformation? in
                     try? queryDocumentSnapshot.data(as: CourseInformation.self)
-                    
                 }
             }
         }
-        
     }
 
     func deleteCourseFromFirestore(id: String) {

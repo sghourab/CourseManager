@@ -10,7 +10,7 @@ import SwiftUI
 struct ButtonLabelStyle: View {
     var label: String
     internal var body: some View {
-        VStack(){
+        VStack {
             Text(label)
                 .foregroundColor(.white)
                 .font(.headline)

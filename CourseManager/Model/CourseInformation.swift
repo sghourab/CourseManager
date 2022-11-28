@@ -13,6 +13,8 @@ struct CourseInformation: Identifiable, Codable {
     @DocumentID var id: String? = UUID().uuidString
     var name: String
     var url: String
+    var imageName: String
+    var progressPercentage: Double
     var gitHubURL: String
     var status: Status
     var dateOfCompletion: Date

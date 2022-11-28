@@ -38,7 +38,7 @@ struct PrimaryButton: View {
             RoundedRectangle(cornerRadius: 12)
                 .frame(height: 50)
                 .angularGradientGlow(colors: [Color(#colorLiteral(red: 0.3697733541, green: 0.4473969421, blue: 1, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5660677474, blue: 0.9790537091, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8410691433, blue: 0.9285136737, alpha: 1)), Color(#colorLiteral(red: 0.8774839917, green: 1, blue: 0.914270342, alpha: 1)), Color(#colorLiteral(red: 0.6685520482, green: 0.678122099, blue: 1, alpha: 1))])
-                .ifLite(!isLiteMode, transform: { view in
+                .ifMode(!isLiteMode, transform: { view in
                     view.blur(radius: 8)
                 })
             Text(text)

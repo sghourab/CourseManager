@@ -37,7 +37,7 @@ struct ProfileRow: View {
                 .font(.system(size: 66))
                 .angularGradientGlow(colors: [Color(#colorLiteral(red: 0.1585651918, green: 0.3611401321, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.3172824642, green: 1, blue: 0.6120585908, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.9656071606, blue: 0.1392755312, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.4030374122, blue: 0.4371414855, alpha: 1))])
                 .frame(width: 66, height: 66)
-                .ifLite(!isLiteMode, transform: { view in
+                .ifMode(!isLiteMode, transform: { view in
                     view.blur(radius: 10)
                 })
             VStack {
