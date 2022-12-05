@@ -75,7 +75,7 @@ struct SearchView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 44, height: 44)
-                            .background(AppColors.background)
+                            .background(AppColor.background)
                             .mask(Circle())
                         VStack(alignment: .leading, spacing: 4) {
                             Text(course.title).bold()

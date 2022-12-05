@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayView: View {
     var body: some View {
         Image(systemName: "play.fill")
-            .foregroundColor(AppColors.shadow).opacity(0.8)
+            .foregroundColor(AppColor.shadow).opacity(0.8)
             .font(.system(size: 60))
             .overlay(Image(systemName: "play")
                 .font(.system(size: 60))
@@ -27,7 +27,7 @@ struct PlayView: View {
             .background(.ultraThinMaterial, in:
                             RoundedRectangle(cornerRadius: 46, style: .continuous))
             .strokeStyle(cornerRadius: 46)
-            .shadow(color: AppColors.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
+            .shadow(color: AppColor.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
             .overlay(
                 Text("12:08")
                     .font(.footnote.weight(.semibold))

@@ -10,7 +10,7 @@ import SwiftUI
 struct ExploreView: View {
     var body: some View {
         ZStack {
-            AppColors.background.ignoresSafeArea()
+            AppColor.background.ignoresSafeArea()
             ScrollView {
                 coursesSection
                 

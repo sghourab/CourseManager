@@ -22,25 +22,29 @@ struct AddOrEditCourseSheet: View {
     var body: some View {
         NavigationView {
             ZStack {
-                MainColors.accent.ignoresSafeArea()
+                AppColor.accent.ignoresSafeArea()
                 Form {
-                    courseNameSection
-                    courseImageNameSection
-                    courseURLSection
-                    gitHubURLSection
-                    percentageProgressSection
-                    statusPickerSection
-                    if viewModel.course.status == .complete {
-                        dateCompletedCalendarSection
-                    }
-                    commentsSection
-                    submitButtonSection
-                        .disabled(isFormDisabled)
+                    Group {
+                        courseNameSection
+
+                        courseImageNameSection
+                        courseURLSection
+                        gitHubURLSection
+                        percentageProgressSection
+                        statusPickerSection
+
+                        if viewModel.course.status == .complete {
+                            dateCompletedCalendarSection
+                        }
+                        commentsSection
+                        submitButtonSection
+                            .disabled(isFormDisabled)
+                    }.listRowBackground(AppColor.accent.opacity(0.7))
                 }
                 .foregroundColor(.white)
                 .background(LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottomLeading), in: RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .shadow(color: AppColors.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
+                .shadow(color: AppColor.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
                 .scrollContentBackground(.hidden)
                 .padding(20)
                 .onAppear(perform: {
@@ -69,7 +73,6 @@ struct AddOrEditCourseSheet: View {
         }
         .textFieldStyle(.plain)
         .textFieldStyle(.roundedBorder)
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var courseImageNameSection: some View {
@@ -78,7 +81,6 @@ struct AddOrEditCourseSheet: View {
         }
         .textFieldStyle(.plain)
         .textFieldStyle(.roundedBorder)
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var courseURLSection: some View {
@@ -87,7 +89,6 @@ struct AddOrEditCourseSheet: View {
         }
         .textFieldStyle(.plain)
         .textFieldStyle(.roundedBorder)
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var gitHubURLSection: some View {
@@ -96,7 +97,6 @@ struct AddOrEditCourseSheet: View {
         }
         .textFieldStyle(.plain)
         .textFieldStyle(.roundedBorder)
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var statusPickerSection: some View {
@@ -108,7 +108,6 @@ struct AddOrEditCourseSheet: View {
                 }
             }
         }
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var percentageProgressSection: some View {
@@ -124,7 +123,6 @@ struct AddOrEditCourseSheet: View {
             }
 
         }.listRowSeparator(.hidden)
-            .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var dateCompletedCalendarSection: some View {
@@ -133,14 +131,12 @@ struct AddOrEditCourseSheet: View {
                 .datePickerStyle(.compact)
                 .labelsHidden()
         }
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var commentsSection: some View {
         Section(header: Text("Comments")) {
             TextEditor(text: $viewModel.course.comments)
         }
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var submitButtonSection: some View {
@@ -151,7 +147,6 @@ struct AddOrEditCourseSheet: View {
                 ButtonLabelStyle(label: "Submit")
             }
         }
-        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var isFormDisabled: Bool {

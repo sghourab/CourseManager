@@ -15,7 +15,7 @@ struct CoursesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                MainColors.accent.ignoresSafeArea()
+                AppColor.accent.ignoresSafeArea()
 
                 listOfCourses
 

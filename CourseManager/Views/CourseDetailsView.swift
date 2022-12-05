@@ -18,7 +18,7 @@ struct CourseDetailsView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                LinearGradient(gradient: Gradient(colors: [MainColors.accent, .purple]), startPoint: .top, endPoint: .bottomLeading).ignoresSafeArea()
+                LinearGradient(gradient: Gradient(colors: [AppColor.accent, .purple]), startPoint: .top, endPoint: .bottomLeading).ignoresSafeArea()
                 ScrollView {
                     CourseDetailsRowView(course: viewModel.course)
                     
@@ -39,7 +39,7 @@ struct CourseDetailsView: View {
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
                 .strokeStyle(cornerRadius: 30)
                 .padding(20)
-                .shadow(color: AppColors.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
+                .shadow(color: AppColor.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
                 .onAppear(perform: {
                     viewModel.getCourseInformation(courseID: courseID)
                     isLogged = false

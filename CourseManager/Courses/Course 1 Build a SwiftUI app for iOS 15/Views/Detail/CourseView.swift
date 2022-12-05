@@ -31,7 +31,7 @@ struct CourseView: View {
             .coordinateSpace(name: "scroll")
             .onAppear { model.showDetail = true }
             .onDisappear { model.showDetail = false }
-            .background(AppColors.background)
+            .background(AppColor.background)
             .mask(RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous))
             .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
             .scaleEffect(viewState.width / -500 + 1)

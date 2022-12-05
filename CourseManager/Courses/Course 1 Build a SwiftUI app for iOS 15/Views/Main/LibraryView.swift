@@ -10,7 +10,7 @@ import SwiftUI
 struct LibraryView: View {
     var body: some View {
         ZStack {
-            AppColors.background.ignoresSafeArea()
+            AppColor.background.ignoresSafeArea()
 
             ScrollView {
                 certificatesSection

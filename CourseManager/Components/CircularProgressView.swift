@@ -26,11 +26,11 @@ struct CircularProgressView: View {
                             in: Circle()
                         )
                         .frame(height: 80)
-                        .shadow(color: AppColors.shadow.opacity(0.7), radius: 5, x: 5, y: 5)
+                        .shadow(color: AppColor.shadow.opacity(0.7), radius: 5, x: 5, y: 5)
                     Circle()
                         .trim(from: 0, to: appear ? value : 0)
                         .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
-                        .fill(AngularGradient(colors: [MainColors.accent, .teal, .green, .red, .purple, .blue, MainColors.accent], center: .center))
+                        .fill(AngularGradient(colors: [AppColor.accent, .teal, .green, .red, .purple, .blue, AppColor.accent], center: .center))
                         .padding(.horizontal, 20)
                         .frame(height: 60)
                         .onAppear {
@@ -38,9 +38,7 @@ struct CircularProgressView: View {
                                 appear = true
                             }
                         }
-                        .onDisappear {
-                            appear = false
-                        }.background(
+                        .background(
                             Circle()
                                 .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                                 .fill(Color(.gray).opacity(0.8))
@@ -48,9 +46,12 @@ struct CircularProgressView: View {
                         .overlay {
                             Image(systemName: "chevron.right.circle.fill")
                                 .font(.title)
-                                .foregroundColor(MainColors.accent)
+                                .foregroundColor(AppColor.accent)
                         }
                 }
+            }
+            .onDisappear {
+                appear = false
             }
         }
     }
