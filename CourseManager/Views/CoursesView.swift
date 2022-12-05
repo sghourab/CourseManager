@@ -9,20 +9,20 @@ import SwiftUI
 
 struct CoursesView: View {
     @State private var showingSheet = false
-    @State private var selectedCourseID = "" 
+    @State private var selectedCourseID = ""
     @ObservedObject private var viewModel = CoursesViewModel()
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
                 MainColors.accent.ignoresSafeArea()
-                
+
                 listOfCourses
 
                     .onDisappear {
                         self.viewModel.firestoreListener?.remove()
                     }
-                
+
                     .toolbar {
                         Button {
                             showingSheet.toggle()
@@ -35,11 +35,9 @@ struct CoursesView: View {
                     }
             }
             .navigationTitle("Courses")
-            .toolbarColorScheme(.dark, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
-    
+
     var listOfCourses: some View {
         ScrollView {
             ForEach(viewModel.courses) { course in
@@ -48,13 +46,12 @@ struct CoursesView: View {
                         ZStack(alignment: .bottomTrailing) {
                             VStack {
                                 CourseRowImageItem(courseName: course.name, imageName: course.imageName)
-                                        
+
                                     .padding(.horizontal, 20)
                                     .padding(.top, 20)
                             }
                             CircularProgressView(value: course.progressPercentage, courseID: courseID)
                                 .offset(x: 0, y: 10)
-                        
                         }
                     }
                 }
