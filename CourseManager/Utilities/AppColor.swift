@@ -8,10 +8,6 @@
 import SwiftUI
 
 
-enum MainColor  {
-   static let accent = Color("MainAccentColor")
-}
-
 enum AppColor {
     static let background = Color("Background")
     static let shadow = Color("Shadow")
