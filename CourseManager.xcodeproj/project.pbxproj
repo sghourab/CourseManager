@@ -69,10 +69,12 @@
 		00A0C5C52911856C005ED2DC /* CourseListConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0C5BF2911856C005ED2DC /* CourseListConcurrency.swift */; };
 		00A0C5C72911863A005ED2DC /* HomeViewConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0C5C62911863A005ED2DC /* HomeViewConcurrency.swift */; };
 		00A0C5C92911864E005ED2DC /* ContentViewConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0C5C82911864E005ED2DC /* ContentViewConcurrency.swift */; };
-		00A0C5CC2911886C005ED2DC /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 00A0C5CB2911886C005ED2DC /* Apollo */; };
 		00A0C5E02912C66C005ED2DC /* CourseQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 00A0C5DF2912C66C005ED2DC /* CourseQuery.graphql */; };
+		00AC8AD22935175E000006C7 /* CourseDetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC8AD12935175E000006C7 /* CourseDetailsRowView.swift */; };
+		00AC8AD62937C66C000006C7 /* TabBarMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC8AD52937C66C000006C7 /* TabBarMain.swift */; };
+		00AC8AD82937C795000006C7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC8AD72937C795000006C7 /* ProfileView.swift */; };
+		00AC8ADA29392164000006C7 /* SampleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC8AD929392164000006C7 /* SampleListView.swift */; };
 		00CE55F62913137300B56CD0 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 00CE55F52913137300B56CD0 /* schema.json */; };
-		00CE55FB2913177A00B56CD0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CE55FA2913177A00B56CD0 /* Network.swift */; };
 		00CE5601291403C100B56CD0 /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CE5600291403C100B56CD0 /* DownloadImageAsync.swift */; };
 		00CE560529143C8E00B56CD0 /* CheckedContinuationBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CE560429143C8E00B56CD0 /* CheckedContinuationBootcamp.swift */; };
 		00CF92A328EB2E2D002CE4A8 /* CourseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */; };
@@ -184,8 +186,11 @@
 		00A0C5C62911863A005ED2DC /* HomeViewConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewConcurrency.swift; sourceTree = "<group>"; };
 		00A0C5C82911864E005ED2DC /* ContentViewConcurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewConcurrency.swift; sourceTree = "<group>"; };
 		00A0C5DF2912C66C005ED2DC /* CourseQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CourseQuery.graphql; sourceTree = "<group>"; };
+		00AC8AD12935175E000006C7 /* CourseDetailsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsRowView.swift; sourceTree = "<group>"; };
+		00AC8AD52937C66C000006C7 /* TabBarMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMain.swift; sourceTree = "<group>"; };
+		00AC8AD72937C795000006C7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		00AC8AD929392164000006C7 /* SampleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleListView.swift; sourceTree = "<group>"; };
 		00CE55F52913137300B56CD0 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		00CE55FA2913177A00B56CD0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		00CE5600291403C100B56CD0 /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 		00CE560429143C8E00B56CD0 /* CheckedContinuationBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedContinuationBootcamp.swift; sourceTree = "<group>"; };
 		00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsView.swift; sourceTree = "<group>"; };
@@ -249,7 +254,6 @@
 				0027DCCA29097C140015CCEF /* FirebaseAnalytics in Frameworks */,
 				0027DCC829097BF00015CCEF /* FirebaseMessaging in Frameworks */,
 				0047796428E61183001AE090 /* FirebaseFirestore in Frameworks */,
-				00A0C5CC2911886C005ED2DC /* Apollo in Frameworks */,
 				0047796828E61183001AE090 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +339,8 @@
 				0047794B28E5DF1E001AE090 /* CoursesView.swift */,
 				0047795A28E5E364001AE090 /* AddOrEditCourseSheet.swift */,
 				00CF92A228EB2E2D002CE4A8 /* CourseDetailsView.swift */,
+				00AC8AD72937C795000006C7 /* ProfileView.swift */,
+				00AC8AD929392164000006C7 /* SampleListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +351,8 @@
 				00585EC628FC867D00BD3D6C /* ButtonLabelStyle.swift */,
 				00560673292E795200DB5FCC /* CourseRowImageItem.swift */,
 				00560677292E7ACE00DB5FCC /* CircularProgressView.swift */,
+				00AC8AD12935175E000006C7 /* CourseDetailsRowView.swift */,
+				00AC8AD52937C66C000006C7 /* TabBarMain.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -536,7 +544,6 @@
 		00CE55F92913175800B56CD0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				00CE55FA2913177A00B56CD0 /* Network.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -805,7 +812,6 @@
 				0047796728E61183001AE090 /* FirebaseFirestoreSwift */,
 				0027DCC729097BF00015CCEF /* FirebaseMessaging */,
 				0027DCC929097C140015CCEF /* FirebaseAnalytics */,
-				00A0C5CB2911886C005ED2DC /* Apollo */,
 				0070D0E2291C0FFD00E6C266 /* BottomSheet */,
 			);
 			productName = CourseManager;
@@ -838,7 +844,6 @@
 			mainGroup = 0047793D28E5DF1E001AE090;
 			packageReferences = (
 				0047796028E61183001AE090 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				00A0C5CA2911886C005ED2DC /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				0070D0E1291C0FFD00E6C266 /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			productRefGroup = 0047794728E5DF1E001AE090 /* Products */;
@@ -901,6 +906,7 @@
 				0070D114291EB4BB00E6C266 /* CertificateView.swift in Sources */,
 				0047795828E5E095001AE090 /* CourseInformation.swift in Sources */,
 				00CF92F128F88A7E002CE4A8 /* HexagonView.swift in Sources */,
+				00AC8AD22935175E000006C7 /* CourseDetailsRowView.swift in Sources */,
 				00A0C5C42911856C005ED2DC /* FeaturedCourseCardConcurrency.swift in Sources */,
 				00F2C84829025B9C00F43A45 /* PackagesView.swift in Sources */,
 				0070D0EB291D4B0500E6C266 /* ForecastCard.swift in Sources */,
@@ -909,7 +915,6 @@
 				00F2C8342902589300F43A45 /* VisualEffectBlur.swift in Sources */,
 				00F2C85C2908222300F43A45 /* Certificate.swift in Sources */,
 				00F2C853290708F600F43A45 /* FAQRow.swift in Sources */,
-				00CE55FB2913177A00B56CD0 /* Network.swift in Sources */,
 				00CF92EA28F88A7E002CE4A8 /* HomeView.swift in Sources */,
 				00CF92EE28F88A7E002CE4A8 /* AccountView.swift in Sources */,
 				0070D10C291EB25800E6C266 /* SectionRow.swift in Sources */,
@@ -929,9 +934,11 @@
 				0070D101291EB13D00E6C266 /* Address.swift in Sources */,
 				0070D110291EB2AB00E6C266 /* HandbookItem.swift in Sources */,
 				0070D105291EB18B00E6C266 /* CourseSection.swift in Sources */,
+				00AC8AD62937C66C000006C7 /* TabBarMain.swift in Sources */,
 				0047795B28E5E364001AE090 /* AddOrEditCourseSheet.swift in Sources */,
 				00585EC728FC867D00BD3D6C /* ButtonLabelStyle.swift in Sources */,
 				0070D0FB291EAC5100E6C266 /* LibraryView.swift in Sources */,
+				00AC8ADA29392164000006C7 /* SampleListView.swift in Sources */,
 				0070D117291EB62000E6C266 /* AvatarView.swift in Sources */,
 				00CF92F928F88A7E002CE4A8 /* NavigationBar.swift in Sources */,
 				00CF92B828F3D50B002CE4A8 /* FirebaseRepository.swift in Sources */,
@@ -974,6 +981,7 @@
 				00F2C84A29025BAD00F43A45 /* FAQView.swift in Sources */,
 				0070D0FE291EAE0C00E6C266 /* SectionView.swift in Sources */,
 				0070D10E291EB28200E6C266 /* SmallCourseItem.swift in Sources */,
+				00AC8AD82937C795000006C7 /* ProfileView.swift in Sources */,
 				00F2C856290720DF00F43A45 /* PrimaryButton.swift in Sources */,
 				0070D0E5291C126900E6C266 /* ForecastView.swift in Sources */,
 				00A0C5C52911856C005ED2DC /* CourseListConcurrency.swift in Sources */,
@@ -1218,14 +1226,6 @@
 				kind = branch;
 			};
 		};
-		00A0C5CA2911886C005ED2DC /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1263,11 +1263,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0070D0E1291C0FFD00E6C266 /* XCRemoteSwiftPackageReference "BottomSheet" */;
 			productName = BottomSheet;
-		};
-		00A0C5CB2911886C005ED2DC /* Apollo */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00A0C5CA2911886C005ED2DC /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

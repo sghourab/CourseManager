@@ -21,34 +21,44 @@ struct AddOrEditCourseSheet: View {
 
     var body: some View {
         NavigationView {
-            Form {
-                courseNameSection
-                courseImageNameSection
-                courseURLSection
-                gitHubURLSection
-                percentageProgressSection
-                statusPickerSection
-                if viewModel.course.status == .complete {
-                    dateCompletedCalendarSection
+            ZStack {
+                MainColors.accent.ignoresSafeArea()
+                Form {
+                    courseNameSection
+                    courseImageNameSection
+                    courseURLSection
+                    gitHubURLSection
+                    percentageProgressSection
+                    statusPickerSection
+                    if viewModel.course.status == .complete {
+                        dateCompletedCalendarSection
+                    }
+                    commentsSection
+                    submitButtonSection
+                        .disabled(isFormDisabled)
                 }
-                commentsSection
-                submitButtonSection
-                    .disabled(isFormDisabled)
-            }
-            .onAppear(perform: {
-                if !editViewIsOpened {
-                    setUpViewModelCourseInformationToEdit()
-                }
-            })
+                .foregroundColor(.white)
+                .background(LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottomLeading), in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .shadow(color: AppColors.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
+                .scrollContentBackground(.hidden)
+                .padding(20)
+                .onAppear(perform: {
+                    if !editViewIsOpened {
+                        setUpViewModelCourseInformationToEdit()
+                    }
+                })
 
-            .navigationTitle("Course Information")
-            .toolbar {
-                Button {
-                    handleXMarkTapped()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.title2)
+                .navigationTitle("Course Information")
+                .toolbar {
+                    Button {
+                        handleXMarkTapped()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.title2)
+                    }
                 }
+                .toolbar(.hidden, for: .tabBar)
             }
         }
     }
@@ -56,25 +66,37 @@ struct AddOrEditCourseSheet: View {
     var courseNameSection: some View {
         Section(header: Text("Course Name")) {
             TextField("Enter course name", text: $viewModel.course.name)
-        }.textFieldStyle(.roundedBorder)
+        }
+        .textFieldStyle(.plain)
+        .textFieldStyle(.roundedBorder)
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var courseImageNameSection: some View {
         Section(header: Text("Course Image Name")) {
             TextField("Enter course image name", text: $viewModel.course.imageName)
-        }.textFieldStyle(.roundedBorder)
+        }
+        .textFieldStyle(.plain)
+        .textFieldStyle(.roundedBorder)
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var courseURLSection: some View {
         Section(header: Text("Course URL")) {
             TextField("Enter course URL", text: $viewModel.course.url)
-        }.textFieldStyle(.roundedBorder)
+        }
+        .textFieldStyle(.plain)
+        .textFieldStyle(.roundedBorder)
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var gitHubURLSection: some View {
         Section(header: Text("GitHub URL")) {
             TextField("Enter GitHub URL", text: $viewModel.course.gitHubURL)
-        }.textFieldStyle(.roundedBorder)
+        }
+        .textFieldStyle(.plain)
+        .textFieldStyle(.roundedBorder)
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var statusPickerSection: some View {
@@ -86,6 +108,7 @@ struct AddOrEditCourseSheet: View {
                 }
             }
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var percentageProgressSection: some View {
@@ -101,6 +124,7 @@ struct AddOrEditCourseSheet: View {
             }
 
         }.listRowSeparator(.hidden)
+            .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var dateCompletedCalendarSection: some View {
@@ -109,12 +133,14 @@ struct AddOrEditCourseSheet: View {
                 .datePickerStyle(.compact)
                 .labelsHidden()
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var commentsSection: some View {
         Section(header: Text("Comments")) {
             TextEditor(text: $viewModel.course.comments)
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var submitButtonSection: some View {
@@ -125,6 +151,7 @@ struct AddOrEditCourseSheet: View {
                 ButtonLabelStyle(label: "Submit")
             }
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var isFormDisabled: Bool {

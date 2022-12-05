@@ -90,11 +90,12 @@ struct CourseManagerApp: App {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundEffect = UIBlurEffect(style: .regular)
         UINavigationBar.appearance().standardAppearance = appearance
+        UITableViewCell.appearance().backgroundColor = UIColor.clear
     }
     var body: some Scene {
         WindowGroup {
-            CoursesView()
-                .environmentObject(model)
+            TabBarMain()
+                .environmentObject(Model())
         }
     }
 }
