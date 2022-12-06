@@ -51,6 +51,7 @@ struct FirstView_Previews: PreviewProvider {
             ContentView()
                 .preferredColorScheme(.dark)
                 .previewDevice("iPhone 13 mini")
-        }.environmentObject(Model())
+        }
+        .environmentObject(Model())
     }
 }
