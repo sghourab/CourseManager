@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct SampleListView: View {
+    
     var sampleCode = SampleWork(name: "profile", description: "profile view")
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [AppColor.accent, .blue, .purple]), startPoint: .top, endPoint: .bottomLeading).ignoresSafeArea()
-            ScrollView {
-                VStack {
-                    overlayContent
+        NavigationView {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [AppColor.accent, .blue, .purple]), startPoint: .top, endPoint: .bottomLeading).ignoresSafeArea()
+                ScrollView {
+                    VStack {
+                        overlayContent
+                    }
                 }
             }
         }
     }
-
     var overlayContent: some View {
         ForEach(sampleWork, id: \.id) { sample in
             VStack(alignment: .leading, spacing: 12) {
@@ -29,7 +31,9 @@ struct SampleListView: View {
                 Text(sample.description)
                     .font(.footnote)
 
-                Button {} label: {
+                NavigationLink {
+                    SofaListView()
+                } label: {
                     Text("View Example")
                         .frame(maxWidth: .infinity)
                 }
@@ -52,6 +56,7 @@ struct SampleListView: View {
         }
     }
 }
+
 #if DEBUG
 #warning("To be moved to separate file after Model content created. This is just a prototype.")
 
@@ -63,6 +68,7 @@ struct SampleWork: Identifiable {
 
 #warning("data below is just a filler, will be changing and making it more descriptive.")
 var sampleWork: [SampleWork] = [
+    SampleWork(name: "Matched Geometry", description: "The matchedGeometryEffect() modifier was used on several views in this example. It allows the seamless animation of a view appearing at two different locations in the view hierachy. For example, the sofa image, name, price and rating all animate to different positions when the details view is opened."),
     SampleWork(name: "Search bar", description: "Searchbar added to View and demonstrated searching list..."),
     SampleWork(name: "Geometry Reader", description: "The view that allows us to read its geometry and layout child views manually."),
     SampleWork(name: "Progress bar", description: "Animated progress bars in different designs"),
