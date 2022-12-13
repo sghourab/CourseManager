@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SofaDetails: View {
     var namespace: Namespace.ID
-    var sofa: Sofa = sofas[0]
+    var sofa: Sofa = SofaMockData.sofas[0]
     var body: some View {
         ZStack {
             ScrollView {

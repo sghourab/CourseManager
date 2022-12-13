@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SectionRow: View {
-    var section: CourseSection = courseSections[0]
+    var section: CourseSection = CourseMockData.MockData.courseSections[0]
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             Image(section.logo)

@@ -21,7 +21,7 @@ struct NotificationView: View {
 
     var sectionsSection: some View {
         VStack {
-            ForEach(Array(courseSections.enumerated()), id: \.offset) { index, section in
+            ForEach(Array(CourseMockData.MockData.courseSections.enumerated()), id: \.offset) { index, section in
                 if index != 0 {
                     Divider()
                 }

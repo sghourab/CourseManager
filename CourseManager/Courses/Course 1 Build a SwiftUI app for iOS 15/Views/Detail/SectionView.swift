@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SectionView: View {
-    var section: CourseSection = courseSections[0]
+    var section: CourseSection = CourseMockData.MockData.courseSections[0]
     @EnvironmentObject var model: Model
     @Environment(\.dismiss) var dismiss
 

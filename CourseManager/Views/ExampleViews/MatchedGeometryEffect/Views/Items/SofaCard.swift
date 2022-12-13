@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SofaCard: View {
     var namespace: Namespace.ID
-    var sofa: Sofa = sofas[0]
+    var sofa: Sofa = SofaMockData.sofas[0]
     @Binding var show: Bool
 
     var body: some View {

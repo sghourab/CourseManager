@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListRow: View {
-    var topic: Topic = topics[0]
+    var topic: Topic = CourseMockData.MockData.topics[0]
     var body: some View {
             HStack(spacing: 16) {
                 Image(systemName: topic.icon)

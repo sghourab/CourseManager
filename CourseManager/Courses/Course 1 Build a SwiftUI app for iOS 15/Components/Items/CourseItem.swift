@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CourseItem: View {
     var namespace: Namespace.ID
-    var course: Course = courses[0]
+    var course: Course = CourseMockData.MockData.courses[0]
     @Binding var show: Bool
 
     var body: some View {

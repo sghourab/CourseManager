@@ -49,7 +49,7 @@ struct LibraryView: View {
     var cardsSection: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                ForEach(courses) { item in
+                ForEach(CourseMockData.MockData.courses) { item in
                     SmallCourseItem(course: item)
                 }
             }

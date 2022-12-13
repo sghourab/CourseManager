@@ -16,6 +16,7 @@
 		0027DCC5290979DC0015CCEF /* LiteModeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027DCC4290979DC0015CCEF /* LiteModeRow.swift */; };
 		0027DCC829097BF00015CCEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0027DCC729097BF00015CCEF /* FirebaseMessaging */; };
 		0027DCCA29097C140015CCEF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0027DCC929097C140015CCEF /* FirebaseAnalytics */; };
+		002FCA3F2948F68300F8DE2F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA3E2948F68300F8DE2F /* SampleData.swift */; };
 		0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047794928E5DF1E001AE090 /* CourseManagerApp.swift */; };
 		0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047794B28E5DF1E001AE090 /* CoursesView.swift */; };
 		0047794E28E5DF1F001AE090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0047794D28E5DF1F001AE090 /* Assets.xcassets */; };
@@ -139,6 +140,7 @@
 		00034F7929425D5100593E1C /* FiveStarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarRatingView.swift; sourceTree = "<group>"; };
 		0027DCC2290977030015CCEF /* NotificationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRow.swift; sourceTree = "<group>"; };
 		0027DCC4290979DC0015CCEF /* LiteModeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteModeRow.swift; sourceTree = "<group>"; };
+		002FCA3E2948F68300F8DE2F /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		0047794628E5DF1E001AE090 /* CourseManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0047794928E5DF1E001AE090 /* CourseManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseManagerApp.swift; sourceTree = "<group>"; };
 		0047794B28E5DF1E001AE090 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
@@ -328,6 +330,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		002FCA3D2948F66500F8DE2F /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				002FCA3E2948F68300F8DE2F /* SampleData.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 		0047793D28E5DF1E001AE090 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +362,7 @@
 				00CE55F52913137300B56CD0 /* schema.json */,
 				0071BEA429098CCC0074C83C /* CourseManager.entitlements */,
 				00585EC328FB3E6B00BD3D6C /* Info.plist */,
+				002FCA3D2948F66500F8DE2F /* SampleData */,
 				0070D1492927F58300E6C266 /* Utilities */,
 				00CF92B628F3D3BE002CE4A8 /* Repository */,
 				0047795928E5E2C4001AE090 /* Model */,
@@ -1022,6 +1033,7 @@
 				00CF92EC28F88A7E002CE4A8 /* SignInView.swift in Sources */,
 				0070D0DC291BFE7500E6C266 /* HomeViewWeather.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
+				002FCA3F2948F68300F8DE2F /* SampleData.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
 				00560678292E7ACE00DB5FCC /* CircularProgressView.swift in Sources */,
 				0070D0E9291D493700E6C266 /* ForecastModel.swift in Sources */,

@@ -34,7 +34,7 @@ struct HomeView: View {
                     if !show {
                         cards
                     } else {
-                        ForEach(courses) { _ in
+                        ForEach(CourseMockData.MockData.courses) { _ in
                             Rectangle()
                                 .fill(.white)
                                 .frame(height: 300)
@@ -78,7 +78,7 @@ struct HomeView: View {
 
     var featured: some View {
         TabView {
-            ForEach(Array(featuredCourses.enumerated()), id: \.offset) { index, course in
+            ForEach(Array(CourseMockData.MockData.featuredCourses.enumerated()), id: \.offset) { index, course in
                 GeometryReader { proxy in
                     let minX = proxy.frame(in: .global).minX
                     FeaturedItem(course: course)
@@ -111,12 +111,12 @@ struct HomeView: View {
                 .accessibilityHidden(true)
         )
         .sheet(isPresented: $showCourse) {
-            CourseView(namespace: namespace, course: featuredCourses[selectedIndex], show: $showCourse)
+            CourseView(namespace: namespace, course: CourseMockData.MockData.featuredCourses[selectedIndex], show: $showCourse)
         }
     }
 
     var cards: some View {
-        ForEach(courses) { course in
+        ForEach(CourseMockData.MockData.courses) { course in
 
             CourseItem(namespace: namespace, course: course, show: $show)
                 .onTapGesture {
@@ -133,7 +133,7 @@ struct HomeView: View {
     }
 
     var detail: some View {
-        ForEach(courses) { course in
+        ForEach(CourseMockData.MockData.courses) { course in
             if course.id == selectedID {
                 CourseView(namespace: namespace, course: course, show: $show)
                     .zIndex(1)

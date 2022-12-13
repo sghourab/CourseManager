@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CourseView: View {
     var namespace: Namespace.ID
-    var course: Course = courses[0]
+    var course: Course = CourseMockData.MockData.courses[0]
     @Binding var show: Bool
     @State var appear = [false, false, false]
     @EnvironmentObject var model: Model
@@ -95,7 +95,7 @@ struct CourseView: View {
 
     var content: some View {
         VStack {
-            ForEach(Array(courseSections.enumerated()), id: \.offset) { index, section in
+            ForEach(Array(CourseMockData.MockData.courseSections.enumerated()), id: \.offset) { index, section in
                 if index != 0 {
                     Divider()
                 }
@@ -110,7 +110,7 @@ struct CourseView: View {
         .strokeStyle(cornerRadius: 30)
         .padding(20)
         .sheet(isPresented: $showSection) {
-            SectionView(section: courseSections[selectedIndex])
+            SectionView(section: CourseMockData.MockData.courseSections[selectedIndex])
         }
     }
 

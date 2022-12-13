@@ -37,7 +37,7 @@ struct SearchView: View {
                 )
             }
             .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("SwiftUI, React, UI Design")) {
-                ForEach(suggestions) { suggestion in
+                ForEach(CourseMockData.MockData.suggestions) { suggestion in
                     Button {
                         text = suggestion.text
                     } label: {
@@ -54,13 +54,13 @@ struct SearchView: View {
                 Text("Done").bold()
             })
             .sheet(isPresented: $show) {
-                CourseView(namespace: namespace, course: courses[selectedIndex], show: $show)
+                CourseView(namespace: namespace, course: CourseMockData.MockData.courses[selectedIndex], show: $show)
             }
         }
     }
 
     var content: some View {
-        ForEach(Array(courses.enumerated()), id: \.offset) { index, course in
+        ForEach(Array(CourseMockData.MockData.courses.enumerated()), id: \.offset) { index, course in
             if course.title.contains(text) || text == "" {
                 if index != 0 {
                     Divider()

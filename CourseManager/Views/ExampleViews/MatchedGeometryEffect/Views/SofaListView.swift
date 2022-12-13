@@ -9,31 +9,31 @@ import SwiftUI
 
 struct SofaListView: View {
     @Namespace var namespace
-    @State var selectedID = UUID()
+    @State var selectedID: UUID?
     @State var show = false
     var body: some View {
         ZStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 20)], spacing: 20) {
-                    if !show {
+                if !show {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 20)], spacing: 20) {
                         sofaCards
                     }
                 }
                 if show {
-                    sofaDetails
+                  sofaDetails
                 }
-            }.padding(.horizontal, 0)
-
+            }
             if show {
                 minimizeDetailsButton
             }
-        }
-        .navigationBarBackButtonHidden(show ? true : false)
-        .toolbar(.hidden, for: .tabBar)
+        }.padding(.horizontal, 0)
+
+            .navigationBarBackButtonHidden(show ? true : false)
+            .toolbar(.hidden, for: .tabBar)
     }
 
     var sofaCards: some View {
-        ForEach(sofas) { sofa in
+        ForEach(SofaMockData.sofas) { sofa in
             SofaCard(namespace: namespace, sofa: sofa, show: $show)
                 .onTapGesture {
                     withAnimation(.openCard) {
@@ -45,9 +45,9 @@ struct SofaListView: View {
     }
 
     var sofaDetails: some View {
-        ForEach(sofas) { sofa in
-            if sofa.id == selectedID {
-                SofaDetails(namespace: namespace, sofa: sofa)
+        ZStack {
+            if let sofa = SofaMockData.sofas.first(where: {$0.id == selectedID}) {
+                 SofaDetails(namespace: namespace, sofa: sofa)
                     .zIndex(1)
                     .transition(.asymmetric(
                         insertion: .opacity.animation(.easeInOut(duration: 1)),

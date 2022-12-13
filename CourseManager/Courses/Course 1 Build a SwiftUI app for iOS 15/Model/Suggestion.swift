@@ -12,8 +12,3 @@ struct Suggestion: Identifiable {
     var text: String
 }
 
-var suggestions = [
-    Suggestion(text: "SwiftUI"),
-    Suggestion(text: "React"),
-    Suggestion(text: "Design")
-]
