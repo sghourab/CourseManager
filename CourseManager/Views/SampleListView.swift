@@ -32,11 +32,7 @@ struct SampleListView: View {
                     .font(.footnote)
 
                 NavigationLink {
-                    if sample.name == "Matched Geometry" {
-                        SofaListView()
-                    } else if sample.name == "Custom Progress Bar" {
-                        ProgressViews()
-                    }
+                    sample.view
                 } label: {
                     Text("View Example")
                         .frame(maxWidth: .infinity)
