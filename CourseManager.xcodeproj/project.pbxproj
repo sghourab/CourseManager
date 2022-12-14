@@ -16,7 +16,11 @@
 		0027DCC5290979DC0015CCEF /* LiteModeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027DCC4290979DC0015CCEF /* LiteModeRow.swift */; };
 		0027DCC829097BF00015CCEF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0027DCC729097BF00015CCEF /* FirebaseMessaging */; };
 		0027DCCA29097C140015CCEF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0027DCC929097C140015CCEF /* FirebaseAnalytics */; };
-		002FCA3F2948F68300F8DE2F /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA3E2948F68300F8DE2F /* SampleData.swift */; };
+		002FCA3F2948F68300F8DE2F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA3E2948F68300F8DE2F /* MockData.swift */; };
+		002FCA492949255C00F8DE2F /* LineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA482949255C00F8DE2F /* LineProgressView.swift */; };
+		002FCA4D294929C600F8DE2F /* ProgressViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA4C294929C600F8DE2F /* ProgressViews.swift */; };
+		002FCA4F294A323600F8DE2F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA4E294A323600F8DE2F /* CircleProgressView.swift */; };
+		002FCA53294A4F1200F8DE2F /* SampleWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002FCA52294A4F1200F8DE2F /* SampleWork.swift */; };
 		0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047794928E5DF1E001AE090 /* CourseManagerApp.swift */; };
 		0047794C28E5DF1E001AE090 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047794B28E5DF1E001AE090 /* CoursesView.swift */; };
 		0047794E28E5DF1F001AE090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0047794D28E5DF1F001AE090 /* Assets.xcassets */; };
@@ -140,7 +144,11 @@
 		00034F7929425D5100593E1C /* FiveStarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarRatingView.swift; sourceTree = "<group>"; };
 		0027DCC2290977030015CCEF /* NotificationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRow.swift; sourceTree = "<group>"; };
 		0027DCC4290979DC0015CCEF /* LiteModeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteModeRow.swift; sourceTree = "<group>"; };
-		002FCA3E2948F68300F8DE2F /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		002FCA3E2948F68300F8DE2F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		002FCA482949255C00F8DE2F /* LineProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineProgressView.swift; sourceTree = "<group>"; };
+		002FCA4C294929C600F8DE2F /* ProgressViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViews.swift; sourceTree = "<group>"; };
+		002FCA4E294A323600F8DE2F /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		002FCA52294A4F1200F8DE2F /* SampleWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleWork.swift; sourceTree = "<group>"; };
 		0047794628E5DF1E001AE090 /* CourseManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0047794928E5DF1E001AE090 /* CourseManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseManagerApp.swift; sourceTree = "<group>"; };
 		0047794B28E5DF1E001AE090 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 		00034F69293FC8E100593E1C /* ExampleViews */ = {
 			isa = PBXGroup;
 			children = (
+				002FCA472949251400F8DE2F /* ProgressView */,
 				00034F6E29418E3A00593E1C /* MatchedGeometryEffect */,
 			);
 			path = ExampleViews;
@@ -333,9 +342,19 @@
 		002FCA3D2948F66500F8DE2F /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
-				002FCA3E2948F68300F8DE2F /* SampleData.swift */,
+				002FCA3E2948F68300F8DE2F /* MockData.swift */,
 			);
 			path = SampleData;
+			sourceTree = "<group>";
+		};
+		002FCA472949251400F8DE2F /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				002FCA482949255C00F8DE2F /* LineProgressView.swift */,
+				002FCA4C294929C600F8DE2F /* ProgressViews.swift */,
+				002FCA4E294A323600F8DE2F /* CircleProgressView.swift */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		0047793D28E5DF1E001AE090 = {
@@ -390,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				0047795728E5E095001AE090 /* CourseInformation.swift */,
+				002FCA52294A4F1200F8DE2F /* SampleWork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1033,11 +1053,12 @@
 				00CF92EC28F88A7E002CE4A8 /* SignInView.swift in Sources */,
 				0070D0DC291BFE7500E6C266 /* HomeViewWeather.swift in Sources */,
 				0047796E28E75C3B001AE090 /* CoursesViewModel.swift in Sources */,
-				002FCA3F2948F68300F8DE2F /* SampleData.swift in Sources */,
+				002FCA3F2948F68300F8DE2F /* MockData.swift in Sources */,
 				0047794A28E5DF1E001AE090 /* CourseManagerApp.swift in Sources */,
 				00560678292E7ACE00DB5FCC /* CircularProgressView.swift in Sources */,
 				0070D0E9291D493700E6C266 /* ForecastModel.swift in Sources */,
 				0070D0DA291BFCF900E6C266 /* Weather + Extensions.swift in Sources */,
+				002FCA53294A4F1200F8DE2F /* SampleWork.swift in Sources */,
 				00F2C8512907064000F43A45 /* ModelData.swift in Sources */,
 				00CE560529143C8E00B56CD0 /* CheckedContinuationBootcamp.swift in Sources */,
 				00F2C83D29025A8A00F43A45 /* MenuRow.swift in Sources */,
@@ -1067,6 +1088,7 @@
 				00CF930E28F88BD7002CE4A8 /* Animations.swift in Sources */,
 				0071BEA8290ADBAD0074C83C /* NetworkReachability.swift in Sources */,
 				0070D0D6291BFC7F00E6C266 /* ContentViewWeather.swift in Sources */,
+				002FCA492949255C00F8DE2F /* LineProgressView.swift in Sources */,
 				00034F7029418E7200593E1C /* Sofa.swift in Sources */,
 				00F2C83929025A2E00F43A45 /* Package.swift in Sources */,
 				00F2C858290723AB00F43A45 /* Extensions.swift in Sources */,
@@ -1075,6 +1097,8 @@
 				00CF92E828F88A7E002CE4A8 /* SearchView.swift in Sources */,
 				00A0C5C22911856C005ED2DC /* DateTitle.swift in Sources */,
 				0027DCC5290979DC0015CCEF /* LiteModeRow.swift in Sources */,
+				002FCA4F294A323600F8DE2F /* CircleProgressView.swift in Sources */,
+				002FCA4D294929C600F8DE2F /* ProgressViews.swift in Sources */,
 				0070D0E0291C08D500E6C266 /* Shapes.swift in Sources */,
 				0070D0F1291D5E1F00E6C266 /* WeatherWidget.swift in Sources */,
 				00CF92E928F88A7E002CE4A8 /* CourseView.swift in Sources */,

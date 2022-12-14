@@ -12,5 +12,7 @@ enum AppColor {
     static let background = Color("Background")
     static let shadow = Color("Shadow")
     static let accent = Color("MainAccentColor")
+    static let lightGreen = Color("LightGreen")
+    static let darkGreen = Color("DarkGreen")
 }
 
