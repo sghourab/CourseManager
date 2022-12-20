@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ZStack {
-            MainColors.accent
+            AppColor.accent
             VStack {
                 List {
                     profile

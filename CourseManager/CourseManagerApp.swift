@@ -94,8 +94,9 @@ struct CourseManagerApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            TabBarMain()
+           TabBarMain()
                 .environmentObject(Model())
+
         }
     }
 }

@@ -36,7 +36,7 @@ struct ModalView: View {
             .rotation3DEffect(.degrees(viewState.height/20), axis: (x: 1, y: 0, z: 0))
             .hueRotation(.degrees(viewState.width/5))
             .gesture(drag)
-            .shadow(color: AppColors.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
+            .shadow(color: AppColor.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
             .opacity(appear[0] ? 1 : 0)
             .offset(y: appear[0] ? 0 : 200)
             .padding(20)

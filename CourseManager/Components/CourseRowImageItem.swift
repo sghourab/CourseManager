@@ -42,7 +42,7 @@ struct CourseRowImageItem: View {
             LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottomLeading)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: AppColors.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
+        .shadow(color: AppColor.shadow.opacity(0.4), radius: 5, x: 5, y: 5)
     }
 }
 

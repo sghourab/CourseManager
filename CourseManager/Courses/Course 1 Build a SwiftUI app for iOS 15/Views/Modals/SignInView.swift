@@ -71,7 +71,7 @@ struct SignInView: View {
                 .buttonStyle(.angular)
                 .tint(.accentColor)
                 .controlSize(.large)
-                .shadow(color: AppColors.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
+                .shadow(color: AppColor.shadow.opacity(0.2), radius: 30, x: 0, y: 30)
 
                 Divider()
                 HStack {

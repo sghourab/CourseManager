@@ -18,7 +18,4 @@ struct Handbook: Identifiable {
     var colorBottom: Color
 }
 
-var handbooks = [
-    Handbook(title: "SwiftUI Handbook", subtitle: "80 sections - 9 hours", text: "A comprehensive series of tutorials covering Xcode, SwiftUI and all the layout and development techniques", logo: "Logo 1", image: "Illustration 1", colorTop: .teal, colorBottom: .blue),
-    Handbook(title: "React Advanced Handbook", subtitle: "30 sections - 3 hours", text: "A comprehensive guide for an overview of the React library and all its basics", logo: "Logo 1", image: "Illustration 2", colorTop: .purple, colorBottom: .pink)
-]
+

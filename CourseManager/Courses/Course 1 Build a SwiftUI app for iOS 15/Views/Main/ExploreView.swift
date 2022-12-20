@@ -10,7 +10,7 @@ import SwiftUI
 struct ExploreView: View {
     var body: some View {
         ZStack {
-            AppColors.background.ignoresSafeArea()
+            AppColor.background.ignoresSafeArea()
             ScrollView {
                 coursesSection
                 
@@ -32,7 +32,7 @@ struct ExploreView: View {
     var coursesSection: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(courses) { course in
+                ForEach(CourseMockData.MockData.courses) { course in
                     SmallCourseItem(course: course)
                 }
             }
@@ -43,7 +43,7 @@ struct ExploreView: View {
 
     var handbooksSection: some View {
         HStack(alignment: .top, spacing: 16) {
-            ForEach(handbooks) { handbook in
+            ForEach(CourseMockData.MockData.handbooks) { handbook in
                 HandbookItem(handbook: handbook)
             }
         }
@@ -52,7 +52,7 @@ struct ExploreView: View {
     
     var topicsSection: some View {
         VStack {
-            ForEach(topics) { topic in
+            ForEach(CourseMockData.MockData.topics) { topic in
                 ListRow(topic: topic)
             }
         }

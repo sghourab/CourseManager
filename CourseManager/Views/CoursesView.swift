@@ -15,7 +15,7 @@ struct CoursesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                MainColors.accent.ignoresSafeArea()
+                AppColor.accent.ignoresSafeArea()
 
                 listOfCourses
 
@@ -51,7 +51,9 @@ struct CoursesView: View {
                                     .padding(.top, 20)
                             }
                             CircularProgressView(value: course.progressPercentage, courseID: courseID)
-                                .offset(x: 0, y: 10)
+                                .offset(x: 0, y: 20)
+                                .frame(width: 100, height: 100)
+                               
                         }
                     }
                 }

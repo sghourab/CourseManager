@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HandbookItem: View {
-    var handbook: Handbook = handbooks[0]
+    var handbook: Handbook = CourseMockData.MockData.handbooks[0]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -53,7 +53,7 @@ struct HandbookItem: View {
 
 struct HandbookItem_Previews: PreviewProvider {
     static var previews: some View {
-        HandbookItem(handbook: handbooks[1])
+        HandbookItem(handbook: CourseMockData.MockData.handbooks[1])
     }
     
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeaturedItem: View {
-    var course: Course = courses[0]
+    var course: Course = CourseMockData.MockData.courses[0]
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()

@@ -10,7 +10,7 @@ import SwiftUI
 struct LibraryView: View {
     var body: some View {
         ZStack {
-            AppColors.background.ignoresSafeArea()
+            AppColor.background.ignoresSafeArea()
 
             ScrollView {
                 certificatesSection
@@ -49,7 +49,7 @@ struct LibraryView: View {
     var cardsSection: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                ForEach(courses) { item in
+                ForEach(CourseMockData.MockData.courses) { item in
                     SmallCourseItem(course: item)
                 }
             }
