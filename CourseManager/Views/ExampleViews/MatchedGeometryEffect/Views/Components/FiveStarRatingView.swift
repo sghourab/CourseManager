@@ -27,7 +27,7 @@ struct FiveStarRatingView: View {
 
     private var starsView: some View {
         HStack(spacing: 0) {
-            ForEach(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { _ in
+            ForEach(0 ..< 5) { _ in
                 Image(systemName: "star.fill")
                     .foregroundColor(.gray)
             }
