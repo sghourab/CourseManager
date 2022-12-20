@@ -96,7 +96,7 @@ struct CourseManagerApp: App {
         WindowGroup {
            TabBarMain()
                 .environmentObject(Model())
-            
+
         }
     }
 }

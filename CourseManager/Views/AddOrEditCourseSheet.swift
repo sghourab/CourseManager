@@ -97,6 +97,7 @@ struct AddOrEditCourseSheet: View {
         }
         .textFieldStyle(.plain)
         .textFieldStyle(.roundedBorder)
+
     }
 
     var statusPickerSection: some View {
@@ -108,6 +109,7 @@ struct AddOrEditCourseSheet: View {
                 }
             }
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var percentageProgressSection: some View {
@@ -123,6 +125,7 @@ struct AddOrEditCourseSheet: View {
             }
 
         }.listRowSeparator(.hidden)
+            .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var dateCompletedCalendarSection: some View {
@@ -131,12 +134,14 @@ struct AddOrEditCourseSheet: View {
                 .datePickerStyle(.compact)
                 .labelsHidden()
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var commentsSection: some View {
         Section(header: Text("Comments")) {
             TextEditor(text: $viewModel.course.comments)
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var submitButtonSection: some View {
@@ -147,6 +152,7 @@ struct AddOrEditCourseSheet: View {
                 ButtonLabelStyle(label: "Submit")
             }
         }
+        .listRowBackground(MainColors.accent.opacity(0.7))
     }
 
     var isFormDisabled: Bool {

@@ -999,7 +999,6 @@
 				0047795828E5E095001AE090 /* CourseInformation.swift in Sources */,
 				00CF92F128F88A7E002CE4A8 /* HexagonView.swift in Sources */,
 				00AC8AD22935175E000006C7 /* CourseDetailsRowView.swift in Sources */,
-				00034F72294192E000593E1C /* SofaCard.swift in Sources */,
 				00A0C5C42911856C005ED2DC /* FeaturedCourseCardConcurrency.swift in Sources */,
 				00F2C84829025B9C00F43A45 /* PackagesView.swift in Sources */,
 				0070D0EB291D4B0500E6C266 /* ForecastCard.swift in Sources */,

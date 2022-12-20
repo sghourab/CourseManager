@@ -58,12 +58,6 @@ struct SampleListView: View {
 }
 
 
-
-
-
-
-
-
 struct SampleListView_Previews: PreviewProvider {
     static var previews: some View {
         SampleListView()
